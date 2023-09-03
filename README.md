@@ -18,6 +18,11 @@
 
 | Student Name | Student Email | GitHub Username | Student's role |
 | :----------: | :-----------: | :-------------: | :------------: |
+|   Sahej Tuli    | hello@sahejtuli.com |      sahejt       |  Team Lead   |
+|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
+|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
+|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
+|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
 |   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
 
 **NO code should be stored in the root of your repository. You may rename the
