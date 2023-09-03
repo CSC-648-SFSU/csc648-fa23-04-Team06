@@ -19,11 +19,11 @@
 | Student Name | Student Email | GitHub Username | Student's role |
 | :----------: | :-----------: | :-------------: | :------------: |
 |   Sahej Tuli    | hello@sahejtuli.com |      sahejt       |  Team Lead   |
-|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
-|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
-|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
-|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
-|   John Doe   | jdoe@sfsu.edu |      jdoe       |  Team Leader   |
+|   Ray Dela Cruz   | radelacr@gmail.com |      trmbeefflavor       |  Front-end Lead   |
+|  Jessica Christine Rosero  | empty |      empty       |  Back-end Lead  |
+|   Navjot Singh   | nsingh10@sfsu.edu |      nsingh166       |  Git Master   |
+|   Faheemah Shaikh   | empty |      empty      |  Scrum Master   |
+|  Ryan Tong  | ryantong362@gmail.com |      Anonynthesis       |  Front-end/Back-end Dev   |
 
 **NO code should be stored in the root of your repository. You may rename the
 `application/` folder to your team's application name if you'd like, but all the
