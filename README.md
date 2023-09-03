@@ -22,7 +22,7 @@
 |   Ray Dela Cruz   | radelacr@gmail.com |      trmbeefflavor       |  Front-end Lead   |
 |  Jessica Christine Rosero  | empty |      empty       |  Back-end Lead  |
 |   Navjot Singh   | nsingh10@sfsu.edu |      nsingh166       |  Git Master   |
-|   Faheemah Shaikh   | empty |      empty      |  Scrum Master   |
+|   Faheemah Shaikh   | faheemahashaikh@gmail.com |      faheemahshaikh      |  Scrum Master   |
 |  Ryan Tong  | ryantong362@gmail.com |      Anonynthesis       |  Front-end/Back-end Dev   |
 
 **NO code should be stored in the root of your repository. You may rename the
