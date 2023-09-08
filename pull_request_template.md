@@ -1,13 +1,16 @@
-Describe your changes here:
+<strong>Describe your changes:</strong>
 
 
+<br>
+<br>
+<br>
 
 
 
 
 ______________________________________________________________________
 
-- [] I thoroughly checked that the build is working.<br>
-- [] The project compiles & runs on my local machine.
+- [ ] I thoroughly checked that the build is working. <br>
+- [ ] The project compiles & runs on my local machine.
 
 ______________________________________________________________________
