@@ -27,7 +27,6 @@ box-sizing: border-box;
 }
 
 .flex-item{
-display: flexbox;
 color: white;
 text-shadow: 2px 2px 4px rgb(189, 120, 47);
 flex: 1;
@@ -43,10 +42,8 @@ box-shadow:
 }
 
 .item-content{
-display:flexbox;
 color: black;
 text-shadow: none;
-font: Arial;
 font-weight: 100;
 text-align: left;
 text-indent: 20px;
