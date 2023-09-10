@@ -8,7 +8,7 @@ export default function(){
         <Header/>
         <div className="title-container">
             <h1 className="my-title">Ray Dela Cruz</h1>
-            <h1 className="my-subtitle">Front End Leader</h1>
+            <h2 className="my-subtitle">Front End Leader</h2>
         </div>
         <div className="flex-container">
             <div className="flex-item">
@@ -48,6 +48,7 @@ export default function(){
                 </div>        
             </div>
         </div>
+        <div className="emoji">💀</div>
         </>
     )
 }

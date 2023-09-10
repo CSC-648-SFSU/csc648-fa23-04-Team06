@@ -3,6 +3,8 @@
   font-weight: 600;
   color: white;
   text-shadow: 2px 2px 4px rgb(189, 120, 47);
+  margin-top: 8px;
+  margin-bottom: 0px;
 }
 
 .title-container {
@@ -18,6 +20,7 @@ color: white;
 text-shadow: 2px 2px 4px rgb(189, 120, 47);
 font-size: 30px;
 opacity: 0.9;
+margin-top: 0px;
 }
 
 .flex-container {
@@ -48,6 +51,12 @@ font-weight: 100;
 text-align: left;
 text-indent: 20px;
 font-size: 16px;
+}
+
+.emoji {
+  text-shadow: 2px 2px 4px rgb(189, 120, 47);
+  text-align: center;
+  font-size: 100px;
 }
 
 
