@@ -36,15 +36,13 @@ export default function(){
             <div className="flex-item">
                 <h2 className="item-title">Hobbies</h2>
                 <div className="item-content-layout">
-                    <div className="item-content">
-                        <p className="hobby-text">
-                            <ul>
-                                <li>ergpj</li>
-                                <li>ergpj</li>
-                                <li>ergpj</li>
-                                <li>ergpj</li>
-                            </ul>
-                        </p>
+                    <div className="item-content">                    
+                        <ul className="hobby-text">
+                            <li>ergpj</li>
+                            <li>ergpj</li>
+                            <li>ergpj</li>
+                            <li>ergpj</li>
+                        </ul>
                     </div>
                 </div>
             </div>

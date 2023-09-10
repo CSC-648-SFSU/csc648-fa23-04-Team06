@@ -29,7 +29,7 @@
     max-width: 90%;
   }
 
-  .flex-item{
+  .flex-item {
     flex: 1;
     padding: 5%;
     text-align: center;
@@ -37,18 +37,19 @@
     box-sizing: content-box;
   }
 
-  .item-content-layout{
+  .item-content-layout {
     flex-direction: row;
     align-items: center;
   }
 
-  .item-title{
+  .item-title {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px 1em;
+    font-size: 40px;
   }
 
-  .item-content{
+  .item-content {
+    display: block;
     padding-left: 30px;
     background-color: hsl(17, 82%, 85%);
     text-align: left;
