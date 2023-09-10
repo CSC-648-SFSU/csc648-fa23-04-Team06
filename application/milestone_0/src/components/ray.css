@@ -1,0 +1,73 @@
+  .my-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display:inline-block;
+  }
+
+  .title-container {
+    text-align: center;
+    background-color: lightsalmon;
+    border-radius: 20px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .my-subtitle {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color:rgb(255, 182, 153);
+  }
+
+  .flex-container {
+    display: flex;
+    margin: 0px;
+    padding: 0%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    max-width: 90%;
+  }
+
+  .flex-item{
+    flex: 1;
+    padding: 5%;
+    text-align: center;
+    margin: 10px;
+    box-sizing: content-box;
+  }
+
+  .item-content-layout{
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .item-title{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px 1em;
+  }
+
+  .item-content{
+    padding-left: 30px;
+    background-color: hsl(17, 82%, 85%);
+    text-align: left;
+  }
+
+  .item-content-img {
+    display: block;
+    margin: 0 auto; 
+  }
+
+  .reg-text {
+    font-size: 16px;
+    text-indent: 20px;
+  }
+
+  .hobby-text {
+    font-size: 32px;
+  }
+
+
+
+  
