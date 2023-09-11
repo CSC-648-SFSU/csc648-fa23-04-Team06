@@ -1,5 +1,8 @@
-export default function header(){
-    return(
-        <h1>CSC-648-04, Team 6</h1>
+export default function Header({ headerText, subheaderText }) {
+    return (
+        <div>
+            <h1 className="header-text">{headerText}</h1>
+            <h2 className="subheader-text">{subheaderText}</h2>
+        </div>
     )
 }

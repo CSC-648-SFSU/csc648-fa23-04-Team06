@@ -2,10 +2,10 @@ import Header from "../components/header"
 import '../components/raySettings/ray.css';
 import profileImage from "../components/raySettings/aboutProfile.png" 
 
-export default function(){
+export default function main(){
     return(
         <>
-        <Header/>
+        <Header headerText="Ray Dela Cruz"/>
         <div className="title-container">
             <h1 className="my-title">Ray Dela Cruz</h1>
             <h2 className="my-subtitle">Front End Leader</h2>
