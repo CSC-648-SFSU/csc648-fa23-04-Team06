@@ -1,0 +1,73 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
+
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: 'DM Sans', sans-serif;
+
+  }
+  
+  /* Styles for the new section under the Header */
+  .intro-section {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+  
+    img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+    }
+  
+    h2{
+        margin-left: 10%;
+        font-weight: 500;
+        font-size: 22px;
+        font-style: italic;
+    }
+    h3 {
+        font-weight: 300;
+      margin-left: 10%; 
+    font-size: 19px;    }
+
+    .buttons{
+        margin-left: 5%;
+        margin-top: 3%;
+
+        .button-cta {
+            font-size: 15px;
+            margin-left: 5%;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 1%;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
+            cursor: pointer;
+            padding-left: 4%;
+            padding-right: 4%;
+            text-decoration: none;
+            font-weight: 400;
+    
+          }
+          
+          .button-cta:hover {
+            background-color: rgb(0, 0, 0); /* Change the background color on hover */
+            color: white; /* Change the text color on hover */
+          }
+
+        .button-basic{
+            cursor: pointer;;
+            background-color: transparent;
+            border: none;
+            color: #0072b1;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 2%;
+
+
+        }
+    }
+  }
+  
