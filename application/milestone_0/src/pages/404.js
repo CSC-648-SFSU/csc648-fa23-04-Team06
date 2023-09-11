@@ -1,10 +1,8 @@
 import Header from "../components/header"
 
-export default function(){
+export default function main(){
     return(
-        <>
-        <Header/>
-        <h2>Page Not Found</h2>
-        </>
+           <Header headerText="Oops! This page does not exist" subheaderText="404 Page Not Found"/>
+    
     )
 }

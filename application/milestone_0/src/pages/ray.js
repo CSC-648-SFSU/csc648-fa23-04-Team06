@@ -1,10 +1,10 @@
 import Header from "../components/header"
 
-export default function(){
+export default function main(){
     return(
         <>
-        <Header/>
-        <h2>Ray's Page</h2>
+        {/* Feel free to use the Header component to add a subHeader, use prop as I have used in index.js... - ST */}
+        <Header headerText="Ray Dela Cruz"/>
         </>
     )
 }
