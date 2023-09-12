@@ -1,0 +1,22 @@
+.intro {   /* for intro section */
+
+    display: flex;
+}
+
+.img { /* profile image styling */
+    display: block;
+    float: left;
+    width: 300px;
+    height: auto;
+    border-radius: 100px;
+  }
+
+  .intro-text { /* intro text styling */
+    display: block;;
+    width: 60%;
+    margin-left: 50px;
+    margin-top: 50px;
+    align-content: center;
+    font-weight: 400;
+    font-size: large;
+  }
