@@ -22,9 +22,8 @@ body {
   
     h2{
         margin-left: 10%;
-        font-weight: 500;
-        font-size: 22px;
-        font-style: italic;
+        font-weight: 200;
+        font-size: 26px;
     }
     h3 {
         font-weight: 300;
@@ -56,11 +55,24 @@ body {
             color: white; /* Change the text color on hover */
           }
 
-        .button-basic{
+        .button-basic-1{
             cursor: pointer;;
             background-color: transparent;
             border: none;
             color: #0072b1;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 2%;
+
+
+        }
+
+        .button-basic-2{
+            cursor: pointer;;
+            background-color: transparent;
+            border: none;
+            color: #b10058;
             border-radius: 10px;
             font-size: 15px;
             font-weight: 300;
