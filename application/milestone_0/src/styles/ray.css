@@ -1,0 +1,66 @@
+.my-title {
+  font-size: 70px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 2px 2px 4px rgb(189, 120, 47);
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+.title-container {
+text-align: center;
+background-color: rgb(245, 153, 123);
+border-radius: 20px;
+box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.my-subtitle {
+text-align: center;
+color: white;
+text-shadow: 2px 2px 4px rgb(189, 120, 47);
+font-size: 30px;
+opacity: 0.9;
+margin-top: 0px;
+}
+
+.flex-container {
+display: flex;
+flex-wrap: wrap;
+box-sizing: border-box;
+}
+
+.flex-item{
+color: white;
+text-shadow: 2px 2px 4px rgb(189, 120, 47);
+flex: 1;
+background-color: rgb(255, 160, 122, 0.6);
+padding: 2rem;
+text-align: center;
+margin: 5px;
+border-radius: 2rem;
+box-shadow: 
+  rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;  
+}
+
+.item-content{
+color: black;
+text-shadow: none;
+font-weight: 100;
+text-align: left;
+text-indent: 20px;
+font-size: 16px;
+}
+
+.emoji {
+  text-shadow: 2px 2px 4px rgb(189, 120, 47);
+  text-align: center;
+  font-size: 100px;
+  margin-top: 50px;
+}
+
+
+
+
+  
