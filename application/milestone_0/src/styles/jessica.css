@@ -1,7 +1,7 @@
-.intro {   /* for intro section */
+.intro-section-jess {   /* for intro section */
 
     display:flex;
-    background-color: rgb(228, 211, 255);
+    background-color: rgb(225, 207, 255);
     padding: 50px;
     border-radius: 20px;
     justify-content: center;
@@ -9,12 +9,12 @@
 
 }
 
-.img { /* profile image styling */
+.img-jess { /* profile image styling */
     display: block;
     float: left;
     width: 300px;
     height: 320px;
-    border-radius: 20px;
+    border-radius: 30px;
     position: relative;
   }
 
@@ -29,6 +29,6 @@
     outline: dotted;
     outline-width: 2 px;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 30px;
     position: relative;
   }
