@@ -8,7 +8,7 @@ export default function main(){
           {/* Feel free to use the Header component to add a subHeader, use prop as I have used in index.js... - ST */}
           <Header headerText={"Ryan Tong"} subheaderText={"Full-Stack Developer"}/>
 
-          <img src={RyanPhoto} />
+          <img src={RyanPhoto} alt="Ryan Tong" />
 
           <p className="intro-text">
             Hello, I'm Ryan Tong. I am currently a senior at San Francisco State University majoring in computer science.
