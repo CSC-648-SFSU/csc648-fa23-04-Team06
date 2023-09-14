@@ -1,7 +1,7 @@
 # csc648-fa23-04-Team06 Repository
 
 **Application URL: https://csc648-fa23-04-team06.vercel.app**
-<br>
+<br><br>
 
 
 | Student Name | Student Email | GitHub Username | Student's role |
