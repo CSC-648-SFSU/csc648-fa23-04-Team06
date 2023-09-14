@@ -14,18 +14,18 @@ body {
     display: flex;
     align-items: center;
   
-    img {
+    .sahej-img {
       width: 300px;
       height: 300px;
       border-radius: 50%;
     }
   
-    h2{
+    .sahej-intro-title{
         margin-left: 10%;
         font-weight: 200;
         font-size: 26px;
     }
-    h3 {
+    .sahej-intro-text {
         font-weight: 300;
       margin-left: 10%; 
     font-size: 19px;    }

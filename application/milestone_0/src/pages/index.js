@@ -6,10 +6,12 @@ import '../styles/index.scss';
 export default function App() {
   return (
     <>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {/* Render the header component */}
       <Header headerText="CSC-648 Software Engineering" subheaderText="Section 04, Team 06" />
 
-      {/* Create a container for the cards */}
+      {/* Create a single container for all the cards */}
       <div className="card-container">
         {/* Card 1: Sahej Tuli, Team Lead */}
         <Card
@@ -36,20 +38,15 @@ export default function App() {
           h2Text="Jessica Christine Rosero" 
           h3Text="Back-End Lead" 
           buttonLink="/jessica" 
-
         />
-      </div>
-      
-      <div className="card-container">
 
-      {/* Card 4: Navjot Singh, Git Master */}
-      <Card
+        {/* Card 4: Navjot Singh, Git Master */}
+        <Card
           gradient="linear-gradient(187deg, rgba(247,187,255,1) 19%, rgba(255,255,255,1) 68%)"
           h1Text="👨🏻‍💻" 
           h2Text="Navjot Singh" 
           h3Text="Git Master"
           buttonLink="/navjot" 
-
         />
 
         {/* Card 5: Faheemah Shaikh, Scrum Master */}
@@ -59,7 +56,6 @@ export default function App() {
           h2Text="Faheemah Shaikh" 
           h3Text="Scrum Master"
           buttonLink="/faheemah" 
-
         />
 
         {/* Card 6: Ryan Tong, Full-Stack Developer */}
@@ -69,10 +65,8 @@ export default function App() {
           h2Text="Ryan Tong" 
           h3Text="Full-Stack Developer" 
           buttonLink="/ryan" 
-
         />
-
-        </div>
+      </div>
     </>
   );
 }
