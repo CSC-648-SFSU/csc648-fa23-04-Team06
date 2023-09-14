@@ -45,7 +45,7 @@ export default function App() {
       {/* Card 4: Navjot Singh, Git Master */}
       <Card
           gradient="linear-gradient(187deg, rgba(247,187,255,1) 19%, rgba(255,255,255,1) 68%)"
-          h1Text="👨🏻‍💻" 
+          h1Text="🏎️" 
           h2Text="Navjot Singh" 
           h3Text="Git Master"
           buttonLink="/navjot" 
