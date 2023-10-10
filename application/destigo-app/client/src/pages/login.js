@@ -25,7 +25,7 @@ const Login = () => {
             console.log(res.message);
 
             if (res.success) {
-                navigate("/dashboard");  
+                navigate(-1);  
             } else {
                 console.error("Login failed:", res.message);
             }
