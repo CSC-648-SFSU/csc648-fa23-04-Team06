@@ -12,7 +12,7 @@ function Navbar() {
         <a href="/">Blog</a>
       </div>
       <div className="right-link">
-        <a href="/">Log In</a>
+        <a href="/login">Log In</a>
       </div>
     </nav>
   );
