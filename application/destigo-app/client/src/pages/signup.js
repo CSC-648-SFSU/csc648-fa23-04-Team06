@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from '../components/navbar/navbar.js';
 import "../styles/signup.css";
-
+// function to set signup data
 const Signup = () => {
     const [signupData, setSignupData] = useState({
         firstName: "",
@@ -14,11 +14,11 @@ const Signup = () => {
     });
 
     const navigate = useNavigate();
-
+    // function to update states for input
     const handleChange = ({ target: { name, value } }) => {
         setSignupData(prev => ({ ...prev, [name]: value }));
     };
-
+    // function to send POST signup data
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -26,7 +26,7 @@ const Signup = () => {
             const { data: res } = await axios.post(url, signupData);
 
             console.log(res.message);
-
+        // after register head to login
             if (res.success) {
                 navigate("/login");
             } else {
@@ -40,6 +40,7 @@ const Signup = () => {
     return (
         <div>
             <Navbar />
+            {/* form to input signup data */}
             <div className="form">
                 <div className="title">Create Account</div>
                 <form onSubmit={handleSubmit}>

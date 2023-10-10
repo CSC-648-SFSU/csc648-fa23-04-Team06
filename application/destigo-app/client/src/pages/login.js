@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from '../components/navbar/navbar.js';
 import "../styles/signup.css"; 
-
+// function to set login data
 const Login = () => {
     const [loginData, setLoginData] = useState({
         email: "",
@@ -11,11 +11,11 @@ const Login = () => {
     });
 
     const navigate = useNavigate();
-
+    // function to updata states for input
     const handleChange = ({ target: { name, value } }) => {
         setLoginData(prev => ({ ...prev, [name]: value }));
     };
-
+    // function to send POST login data
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -47,6 +47,7 @@ const Login = () => {
     return (
         <div>
             <Navbar />
+            {/* form to iput login data */}
             <div className="form login">
                 <div className="title">Login</div>
                 <form onSubmit={handleSubmit}>
