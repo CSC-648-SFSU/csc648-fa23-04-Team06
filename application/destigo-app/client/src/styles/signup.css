@@ -11,16 +11,18 @@ body {
     border-radius: 20px;
     box-sizing: border-box;
     height: 650px;
+    margin-top: 20px;
     padding: 20px;
     width: 320px;
   }
   
   .title {
-    color: rgb(239, 180, 144);
+    color: #F1D0B6;
     font-family: sans-serif;
     font-size: 36px;
     font-weight: 600;
     margin-top: 30px;
+    text-shadow: 2px 2px 4px rgba(108, 108, 108, 0.5);
   }
   
   .input-container {
@@ -38,7 +40,7 @@ body {
   }
   
   .input {
-    background-color: #f8c096e7;
+    background-color: #F1D0B6;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -95,15 +97,15 @@ body {
   }
   
   .input:focus ~ .placeholder {
-    color: #dc2f55;
+    color: #080708;
   }
   
   .submit {
-    background-color: #f8c096e7;
+    background-color: #F1D0B6;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
-    color: #eee;
+    color: #fdfcfc;
     cursor: pointer;
     font-size: 18px;
     height: 50px;
@@ -114,6 +116,6 @@ body {
   }
   
   .submit:active {
-    background-color: rgb(187, 109, 0);
+    background-color: rgb(216, 147, 118);
   }
   
