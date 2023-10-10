@@ -25,7 +25,13 @@ const Login = () => {
             console.log(res.message);
 
             if (res.success) {
-                navigate(-1);  
+                // check if user is a new signup
+                if (document.referrer.includes("/signup")){
+                    navigate("/home");
+                // go back to previous page
+                } else {
+                navigate(-1);
+                }   
             } else {
                 console.error("Login failed:", res.message);
             }
