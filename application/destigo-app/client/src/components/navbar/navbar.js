@@ -5,14 +5,14 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="left-links">
-        <a href="/">Link 1</a>
-        <a href="/">Link 2</a>
-        <a href="/">Link 3</a>
-        <a href="/">Link 4</a>
-        <a href="/">Link 5</a>
+        <a href="/">Home</a>
+        <a href="/">Flights</a>
+        <a href="/">Hotels</a>
+        <a href="/">Events</a>
+        <a href="/">Blog</a>
       </div>
       <div className="right-link">
-        <a href="/">Right Link</a>
+        <a href="/">Log In</a>
       </div>
     </nav>
   );
