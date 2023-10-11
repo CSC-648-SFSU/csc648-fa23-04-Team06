@@ -1,4 +1,4 @@
-const BASE_URL = "https://destigo-app-api-backend.vercel.app"
+const BASE_URL = "https://destigo-app-api-backend.vercel.apps"
 
 export const request = async (url, method, headers = {}, body = {}, isNotStringified = false) => {
     let res

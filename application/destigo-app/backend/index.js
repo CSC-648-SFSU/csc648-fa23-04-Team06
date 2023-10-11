@@ -14,7 +14,13 @@ mongoose.connect(process.env.MONGO_URL, () => console.log('MongoDB has been star
 // routes
 app.use('/images', express.static('public/images'))
 
-app.use(cors())
+app.get("/", (req,res) =>{
+    res.json("This is our API");
+})
+
+app.use(cors(
+
+))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use('/auth', authController)
