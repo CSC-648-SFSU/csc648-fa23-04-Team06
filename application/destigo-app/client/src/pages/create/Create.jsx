@@ -44,7 +44,7 @@ const Create = () => {
         formData.append("filename", filename)
         formData.append("image", img)
 
-        await fetch(`http://localhost:8800/upload`, {
+        await fetch(`https://destigo-app-api-backend.vercel.app/upload`, {
           method: "POST",
           body: formData
         })
