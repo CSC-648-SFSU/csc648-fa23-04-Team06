@@ -39,3 +39,30 @@
     }
   }
 }
+
+.description {
+  .descriptionBG {
+    width: 100%;
+    height: 100%;
+  }
+  position: relative;
+
+  .description-text {
+    display: block;
+    block-size: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .title {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 53px;
+    color: rgb(167, 79, 33);
+  }
+  .word-description {
+    font-size: 25px;
+    color: #F1D0B6;
+  }
+}
