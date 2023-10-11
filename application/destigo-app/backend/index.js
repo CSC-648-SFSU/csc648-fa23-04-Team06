@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 app.use(
   cors({
-    origin: ["https://destigo-app-api-backend.vercel.app"],
+    origin: ["https://destigo-app-client-frontend.vercel.app/"],
     method: ["POST", "GET"],
     credentials: true,
   })
