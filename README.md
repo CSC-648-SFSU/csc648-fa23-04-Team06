@@ -1,6 +1,8 @@
 # csc648-fa23-04-Team06 Repository
 
-**Application URL: https://csc648-fa23-04-team06.vercel.app**
+**About Page URL: https://csc648-fa23-04-team06.vercel.app**
+**Application URL: [https://csc648-fa23-04-team06.vercel.app](https://destigo-app-client-frontend-gvag2p6ed-team-06-csc648-04.vercel.app)**
+
 <br><br>
 
 
