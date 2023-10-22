@@ -20,13 +20,7 @@ app.get("/", (req, res) => {
   res.json("This is our API");
 });
 
-app.use(
-  cors({
-    origin: ["https://destigo-app-client-frontend.vercel.app"],
-    method: ["POST", "GET"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authController);

@@ -71,7 +71,7 @@ const Categories = () => {
               {filteredBlogs?.map((blog) => (
                 <div key={blog._id} className={classes.blog}>
                   <Link to={`/blogDetails/${blog?._id}`}>
-                    <img src={`https://destigo-app-api-backend.vercel.app/images/${blog?.photo}`} />
+                    <img src={`${blog?.photo}`} />
                   </Link>
                   <div className={classes.blogData}>
                     <div className={classes.categoryAndMetadata}>

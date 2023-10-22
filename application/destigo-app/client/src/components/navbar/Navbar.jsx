@@ -3,9 +3,12 @@ import classes from "./navbar.module.css";
 import { Link } from "react-router-dom";
 import womanImg from "../../assets/usericon.png";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/authSlice";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <div className={classes.container}>
@@ -42,7 +45,13 @@ const Navbar = () => {
           {showModal && (
             <div className={classes.modal}>
               <Link to="/create">Create</Link>
-              <span>Log Out</span>
+              <span
+                onClick={() => {
+                  dispatch(logout());
+                }}
+              >
+                Log Out
+              </span>
             </div>
           )}
         </div>
