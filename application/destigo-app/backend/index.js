@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 //cors 
-const allowedOrigins = ['https://destigo-backend.onrender.com'];
+const allowedOrigins = ['https://destigo-app-client-frontend.vercel.app'];
 
 const corsOptions = {
   origin: function (origin, callback) {
