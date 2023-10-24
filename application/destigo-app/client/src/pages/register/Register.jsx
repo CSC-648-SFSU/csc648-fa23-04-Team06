@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { request } from '../../utils/fetchApi'
 import { register } from '../../redux/authSlice'
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const Register = () => {
   const [username, setUsername] = useState("")
@@ -14,18 +14,18 @@ const Register = () => {
   const navigate = useNavigate()
 
   const handleRegister = async (e) => {
-     e.preventDefault()
+    e.preventDefault()
 
-     if(username === '' || email === '' || password === '') return
+    if (username === '' || email === '' || password === '') return
 
     try {
-      const options = {'Content-Type': 'application/json'}
+      const options = { 'Content-Type': 'application/json' }
 
-      const data = await request('/auth/register', "POST", options, {username, email, password})
+      const data = await request('/auth/register', "POST", options, { username, email, password })
       dispatch(register(data))
-      navigate("/")
+      navigate("/login"); // Navigate to the "/login" page after successful registration
     } catch (error) {
-       console.error(error)
+      console.error(error)
     }
   }
 
@@ -34,9 +34,9 @@ const Register = () => {
       <div className={classes.wrapper}>
         <h2>Register</h2>
         <form onSubmit={handleRegister}>
-          <input type="text" placeholder="Username..." onChange={(e) => setUsername(e.target.value)}/>
-          <input type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)}/>
-          <input type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
+          <input type="text" placeholder="Username..." onChange={(e) => setUsername(e.target.value)} />
+          <input type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} />
+          <input type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)} />
           <button type="submit">Register</button>
           <p>Already have an account? <Link to='/login'>Login</Link></p>
         </form>

@@ -17,11 +17,15 @@ mongoose.connect(process.env.MONGO_URL, () =>
 app.use("/images", express.static("public/images"));
 
 app.get("/", (req, res) => {
-  res.json("This is our API");
+  res.json("If you're seeing this message, it means the DestiGo API is running.");
 });
 
+
 //cors 
-const allowedOrigins = ['https://destigo-app-client-frontend.vercel.app'];
+const allowedOrigins = [
+  'https://destigo-app-client-frontend.vercel.app', // CORS Rule for Production URL
+  'http://localhost:3000' // CORS Rule for Development (localhost) URL
+];
 
 const corsOptions = {
   origin: function (origin, callback) {

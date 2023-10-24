@@ -1,12 +1,15 @@
 /* App.css */
-
+.intro{
+  margin-top: 18%;
+  margin-bottom: 22%;
+}
 .video-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This will scale the video to cover the entire container */
+    object-fit: cover; 
     z-index: -1;
   }
   
@@ -27,8 +30,6 @@
         color: #F1D0B6;
         font-weight: 300;
         font-size: 25px;
-  
-  
       }
   
       .video-overlay h4{

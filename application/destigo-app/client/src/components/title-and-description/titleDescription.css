@@ -1,0 +1,35 @@
+/* titleDescription.css */
+
+.title-description {
+    position: relative;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Increase the height for a larger box */
+}
+
+.title-description .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Text color for the overlay */
+    padding: 10px;
+}
+
+.title-description h1 {
+    font-size: 33px;
+    font-weight: 600;
+    color: #A74F21;
+    margin-bottom: 24px;
+}
+
+.title-description p {
+    font-size: 18px;
+    color: #000;
+    font-weight: 300;
+    font-style: italic;
+}
