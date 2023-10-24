@@ -1,5 +1,5 @@
-// const BASE_URL = "https://destigo-backend.onrender.com";  //Comment this out if working on development.
-const BASE_URL = "http://localhost:8800";                    //Comment this out when pushing to production.
+const BASE_URL = "https://destigo-backend.onrender.com";  //Comment this out if working on development.
+// const BASE_URL = "http://localhost:8800";                    //Comment this out when pushing to production.
 
 
 export const request = async (
