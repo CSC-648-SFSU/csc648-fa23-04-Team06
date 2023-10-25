@@ -83,7 +83,7 @@ const BlogDetails = () => {
             ) : (
               <>
                 {isLiked ? (
-                  <div className={classes.like}>
+                  <div className={classes.like} >
                     <AiFillLike onClick={handleLikePost} />
                   </div>
                 ) : (

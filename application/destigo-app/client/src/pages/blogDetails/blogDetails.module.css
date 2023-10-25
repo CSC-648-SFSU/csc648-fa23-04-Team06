@@ -42,17 +42,36 @@
 
 .controls>.edit{
     cursor: pointer;
-    padding: 0.4rem 0.75rem;
-    border-radius: 12px;
-    background-color: green;
+    padding: 0.3rem 0.5rem;
+    border-radius: 40px;
+    background-color: rgb(159, 111, 255);
+    color: #fff;
+    transition: 0.1s ease-in-out;
+}
+
+.controls>.edit:hover{
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 40px;
+    background-color: rgb(41, 0, 124);
     color: #fff;
 }
 
 .controls > .delete{
     cursor: pointer;
-    padding: 0.4rem 0.75rem;
-    border-radius: 12px;
-    background-color: #f00;
+    padding: 0.3rem 0.5rem;
+    border-radius: 40px;
+    background-color: rgb(215, 76, 76);
+    color: #fff;
+    transition: 0.1s ease-in-out;
+
+}
+
+.controls > .delete:hover{
+    cursor: pointer;
+    padding: 0.3rem 0.rgb(139, 0, 0);
+    border-radius: 40px;
+    background-color: rgb(155, 5, 5);
     color: #fff;
 }
 
@@ -60,7 +79,16 @@
     cursor: pointer;
     padding: 0.3rem 0.5rem;
     border-radius: 40px;
-    background-color: rgb(76, 76, 250);
+    background-color: rgb(97, 97, 255);
+    color: #fff;
+    transition: 0.1s ease-in-out;
+}
+
+.like:hover{
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 40px;
+    background-color: rgb(0, 0, 91);
     color: #fff;
 }
 
@@ -85,6 +113,7 @@
     letter-spacing: 0.75px;
     display: flex;
     flex-direction: column;
+    width: 85%;
 }
 
 .desc > span{
@@ -98,7 +127,7 @@
     flex-direction: column;
     font-size: 18px;
     align-items: flex-end;
-    gap: 0.5rem;
+    gap: 0.5rem;   
 }
 
 .authorAndCreatedAt{
