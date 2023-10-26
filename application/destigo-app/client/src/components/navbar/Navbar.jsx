@@ -3,12 +3,22 @@ import classes from "./navbar.module.css";
 import { Link } from "react-router-dom";
 import womanImg from "../../assets/usericon.png";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/authSlice";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
+  const isAuthenticated = useSelector((state) => state.auth.user !== null);
   const dispatch = useDispatch();
+
+  const handleImageClick = () => {
+    if (isAuthenticated) {
+      setShowModal((prev) => !prev);
+    } else {
+      // Redirect to the login page if the user is not logged in
+      window.location.href = "/login";
+    }
+  };
 
   return (
     <div className={classes.container}>
@@ -38,13 +48,14 @@ const Navbar = () => {
         </div>
         <div className={classes.right}>
           <img
-            onClick={() => setShowModal((prev) => !prev)}
+            onClick={handleImageClick}
             src={womanImg}
             className={classes.img}
           />
-          {showModal && (
+          {isAuthenticated && showModal && (
             <div className={classes.modal}>
-              <Link to="/create">Create</Link>
+              <Link to="/messages">Messages</Link>
+              <Link to="/create">Create Post</Link>
               <span
                 onClick={() => {
                   dispatch(logout());
