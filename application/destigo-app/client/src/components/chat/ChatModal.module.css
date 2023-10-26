@@ -1,0 +1,59 @@
+.chat-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
+    padding: 20px;
+  }
+  
+  .chat-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .chat-modal-header h2 {
+    margin: 0;
+  }
+  
+  .chat-modal-close {
+    cursor: pointer;
+  }
+  
+  .chat-modal-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .chat-modal-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .chat-modal-input input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chat-modal-input button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f4c5a0;
+    color: #fff;
+    cursor: pointer;
+  }

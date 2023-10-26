@@ -5,10 +5,18 @@ import womanImg from "../../assets/usericon.png";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/authSlice";
+import ChatModal from "../chat/ChatModal";
+
+
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showChatModal, setShowChatModal] = useState(false);
   const dispatch = useDispatch();
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
 
   return (
     <div className={classes.container}>
@@ -45,6 +53,11 @@ const Navbar = () => {
           {showModal && (
             <div className={classes.modal}>
               <Link to="/create">Create</Link>
+              <Link to="/friends">Friends</Link>
+              <button onClick={() => {
+                setShowChatModal(true);
+                setShowModal(false);
+              }}>Chat</button>
               <span
                 onClick={() => {
                   dispatch(logout());
@@ -53,6 +66,9 @@ const Navbar = () => {
                 Log Out
               </span>
             </div>
+          )}
+          {showChatModal && (
+            <ChatModal onClose={() => setShowChatModal(false)} />
           )}
         </div>
       </div>
