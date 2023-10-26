@@ -35,7 +35,7 @@ const BlogSchema = new mongoose.Schema({
     likes: {
         type: [String],
         default: [],
-    }
+    },
 }, {timestamps: true})
 
 module.exports = mongoose.model("Blog", BlogSchema)
