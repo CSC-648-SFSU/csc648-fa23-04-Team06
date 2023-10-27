@@ -1,0 +1,13 @@
+.header{
+    text-align: left;
+}
+
+.header-text{
+    font-size: 90px;
+    font-weight: 700;
+}
+
+.subHeader-text{
+    font-size: 35px;
+    font-weight: 500;
+}

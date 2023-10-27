@@ -1,14 +1,17 @@
-import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
-import "./hotels.css"
+import React from "react";
+import Navbar from "../../components/navbar/Navbar";
+import "./hotels.css";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/header";
 
 const hotels = () => {
   return (
     <>
-    <Navbar/>
-    <h1 align="center"> This will be the Hotels page.</h1>
+      <Navbar />
+      <Header header={"Hotels"} />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default hotels
+export default hotels;
