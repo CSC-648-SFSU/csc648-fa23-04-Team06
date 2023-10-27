@@ -33,7 +33,7 @@
 
 .categories {
     display: flex;
-  
+
     gap: 3rem;
     color: #333;
     margin-bottom: 2rem;
@@ -150,3 +150,47 @@
 font-weight: 400;
   color: #222;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: 30px;
+    margin-top: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .plusCircleContainer {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .plusCircle {
+    font-size: 48px;
+    color: #444;
+    transition: transform 0.3s;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .createPostText {
+    margin-right: 5px; 
+    opacity: 0;
+    font-size: 20px;
+    transition: opacity 0.3s, transform 0.3s;
+    margin-bottom: 10px;
+  }
+  
+  .plusCircleContainer:hover .createPostText {
+    opacity: 1;
+    transform: translateX(-10px); /* Adjust the horizontal offset to the left */
+  }
+  
+  .plusCircle:hover {
+    transform: rotate(90deg);
+    color: #000;
+  }
+  

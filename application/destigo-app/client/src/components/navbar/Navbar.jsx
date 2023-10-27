@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import womanImg from "../../assets/usericon.png";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/authSlice";
 import ChatModal from "../chat/ChatModal";
 
@@ -12,7 +12,19 @@ import ChatModal from "../chat/ChatModal";
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [showChatModal, setShowChatModal] = useState(false);
+
+  const isAuthenticated = useSelector((state) => state.auth.user !== null);
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const handleImageClick = () => {
+    if (isAuthenticated) {
+      setShowModal((prev) => !prev);
+    } else {
+      // Redirect to the login page if the user is not logged in
+      window.location.href = "/login";
+    }
+  };
 
   function handleCloseModal() {
     setShowModal(false);
@@ -26,38 +38,39 @@ const Navbar = () => {
         </div>
         <div className={classes.center}>
           <li className={classes.listItem}>
-            <a href="/">Home</a>
+            <Link to="/" className={location.pathname === '/' ? classes.active : ''}>Home</Link>
           </li>
           <li className={classes.listItem}>
-            <a href="/about">About</a>
+            <Link to="/about" className={location.pathname === '/about' ? classes.active : ''}>About</Link>
           </li>
           <li className={classes.listItem}>
-            <a href="/flights">Flights</a>
+            <Link to="/flights" className={location.pathname === '/flights' ? classes.active : ''}>Flights</Link>
           </li>
           <li className={classes.listItem}>
-            <a href="/hotels">Hotels</a>
+            <Link to="/hotels" className={location.pathname === '/hotels' ? classes.active : ''}>Hotels</Link>
           </li>
           <li className={classes.listItem}>
-            <a href="/events">Events</a>
+            <Link to="/events" className={location.pathname === '/events' ? classes.active : ''}>Events</Link>
           </li>
           <li className={classes.listItem}>
-            <a href="/blog">Community</a>
+            <Link to="/blog" className={location.pathname === '/blog' ? classes.active : ''}>Community</Link>
           </li>
         </div>
         <div className={classes.right}>
           <img
-            onClick={() => setShowModal((prev) => !prev)}
+            onClick={handleImageClick}
             src={womanImg}
             className={classes.img}
           />
-          {showModal && (
+          {isAuthenticated && showModal && (
             <div className={classes.modal}>
               <Link to="/create">Create</Link>
               <Link to="/friends">Friends</Link>
-              <button onClick={() => {
+              <Link onClick={() => {
                 setShowChatModal(true);
                 setShowModal(false);
-              }}>Chat</button>
+              }}>Messages</Link>
+              <Link to="/create">Create Post</Link>
               <span
                 onClick={() => {
                   dispatch(logout());
