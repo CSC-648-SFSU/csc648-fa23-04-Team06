@@ -1,9 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import classes from "./blogDetails.module.css";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import classes from "./blogDetails.module.css";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import { request } from "../../utils/fetchApi";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
@@ -41,6 +39,23 @@ const BlogDetails = () => {
     try {
       const options = { Authorization: `Bearer ${token}` };
       await request(`/blog/likeBlog/${id}`, "PUT", options);
+
+      // Update the like count in the blogDetails state
+      setBlogDetails((prevBlogDetails) => {
+        const updatedBlogDetails = { ...prevBlogDetails };
+        if (isLiked) {
+          // User unliked, decrement like count
+          updatedBlogDetails.likes = updatedBlogDetails.likes.filter(
+            (userId) => userId !== user._id
+          );
+        } else {
+          // User liked, increment like count
+          updatedBlogDetails.likes.push(user._id);
+        }
+        return updatedBlogDetails;
+      });
+
+      // Toggle the isLiked state
       setIsLiked((prev) => !prev);
     } catch (error) {
       console.error(error);
@@ -83,12 +98,12 @@ const BlogDetails = () => {
             ) : (
               <>
                 {isLiked ? (
-                  <div className={classes.like} >
-                    <AiFillLike onClick={handleLikePost} />
+                  <div className={classes.like} onClick={handleLikePost}>
+                    <AiFillLike />
                   </div>
                 ) : (
-                  <div className={classes.like}>
-                    <AiOutlineLike onClick={handleLikePost} />
+                  <div className={classes.like} onClick={handleLikePost}>
+                    <AiOutlineLike />
                   </div>
                 )}
               </>

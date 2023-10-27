@@ -1,12 +1,12 @@
 const fileUpload = async (file) => {
   const formData = new FormData();
   formData.append("file", file);
-  formData.append("upload_preset", "chat-app");
-  formData.append("cloud_name", "hellooworkd"); // Replace with your upload preset
-
+  formData.append("upload_preset", "blog-app");
+  formData.append("cloud_name", "destigo"); 
+  
   try {
     const response = await fetch(
-      "https://api.cloudinary.com/v1_1/hellooworkd/image/upload",
+      "https://api.cloudinary.com/v1_1/destigo/image/upload",
       {
         method: "POST",
         body: formData,
