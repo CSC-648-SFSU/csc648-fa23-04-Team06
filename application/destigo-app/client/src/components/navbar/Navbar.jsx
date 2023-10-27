@@ -5,9 +5,14 @@ import womanImg from "../../assets/usericon.png";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/authSlice";
+import ChatModal from "../chat/ChatModal";
+
+
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showChatModal, setShowChatModal] = useState(false);
+
   const isAuthenticated = useSelector((state) => state.auth.user !== null);
   const dispatch = useDispatch();
   const location = useLocation();
@@ -20,6 +25,10 @@ const Navbar = () => {
       window.location.href = "/login";
     }
   };
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
 
   return (
     <div className={classes.container}>
@@ -55,7 +64,12 @@ const Navbar = () => {
           />
           {isAuthenticated && showModal && (
             <div className={classes.modal}>
-              <Link to="/messages">Messages</Link>
+              <Link to="/create">Create</Link>
+              <Link to="/friends">Friends</Link>
+              <Link onClick={() => {
+                setShowChatModal(true);
+                setShowModal(false);
+              }}>Messages</Link>
               <Link to="/create">Create Post</Link>
               <span
                 onClick={() => {
@@ -65,6 +79,9 @@ const Navbar = () => {
                 Log Out
               </span>
             </div>
+          )}
+          {showChatModal && (
+            <ChatModal onClose={() => setShowChatModal(false)} />
           )}
         </div>
       </div>

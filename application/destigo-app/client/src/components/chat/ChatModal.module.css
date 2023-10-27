@@ -1,0 +1,89 @@
+.chat-modal {
+  color: #c36417;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  padding: 20px;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .chat-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .chat-modal-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .chat-modal-close {
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .chat-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .chat-message-text {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 5px;
+  }
+  
+  .chat-message-timestamp {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .chat-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .chat-input-field {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #fff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-right: 10px;
+  }
+  
+  .chat-input-button {
+    background-color: #007aff;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+  }
+  
