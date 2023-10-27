@@ -23,8 +23,7 @@ app.get("/", (req, res) => {
 
 // cors 
 const allowedOrigins = [
-  'https://destigo-app-client-frontend.vercel.app',
-  'http://localhost:3000'
+  'https://destigo-app-client-frontend.vercel.app'
 ];
 
 const corsOptions = {
