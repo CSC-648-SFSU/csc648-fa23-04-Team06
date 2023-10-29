@@ -26,7 +26,7 @@ const Login = () => {
       const data = await request("/auth/login", 'POST', options, {email, password})
        console.log(data)
       dispatch(login(data))
-      navigate('/')
+      navigate('/home')
     } catch (error) {
       console.error(error)
     }
