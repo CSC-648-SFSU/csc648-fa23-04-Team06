@@ -50,6 +50,19 @@ const ChatModal = () => {
     }
   };
 
+  const handleShowConvo = () => {
+      const url = BASE_URL + '/api/messages/showConvo';
+      fetch(url, {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          //only works for one message breaks when there is two.
+          const dataString = JSON.stringify(data).substring(1, JSON.stringify(data).length-1);
+          const dataObj = JSON.parse(dataString);
+          document.getElementById('convoOutput').innerHTML = dataObj.text;
+        });  
+  };
   // const handleSendMessage = () => {
   //   if (selectedFriend && messageValue) {
   //     const newMessage = { id: messages.length + 1, from: "You", to: selectedFriend.name, text: messageValue };
@@ -129,7 +142,7 @@ const ChatModal = () => {
               </div>
               {selectedFriend && (
                 <div className={classes["chat-modal-chat"]}>
-                  <div className={classes["chat-modal-messages"]}>
+                  {/* <div className={classes["chat-modal-messages"]}>
                     {messages.map((message) => (
                       <div
                       key={message.id}
@@ -143,7 +156,7 @@ const ChatModal = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
                   <div className={classes["chat-modal-input"]}>
                     <input
                       type="text"
@@ -154,6 +167,10 @@ const ChatModal = () => {
                     <Button variant="primary" onClick={handleSendMessage}>
                       Send
                     </Button>
+                    <Button variant="primary" onClick={handleShowConvo}>
+                      Show Conversation
+                    </Button>
+                    <p id="convoOutput"></p>
                   </div>
                 </div>
               )}
