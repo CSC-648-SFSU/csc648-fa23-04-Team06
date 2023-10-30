@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './register.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { request } from '../../utils/fetchApi';
@@ -12,6 +12,7 @@ const Register = () => {
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
   const [error, setError] = useState('');
+  const [emailAvailability, setEmailAvailability] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -60,6 +61,30 @@ const Register = () => {
     }
   };
 
+  //checking to see if the email was used
+  const checkEmailAvailability = async () => {
+    try {
+      const options = { 'Content-Type': 'application/json' };
+      const response = await request('/auth/check-email', 'POST', options, {
+        email,
+      });
+
+      setEmailAvailability(response.message);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    if (email === '') {
+      setEmailAvailability('');
+      return;
+    }
+    checkEmailAvailability();
+  }, [email]);
+
+
+
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
@@ -67,6 +92,7 @@ const Register = () => {
         <form onSubmit={handleRegister}>
           <input type="text" placeholder="Username..." onChange={(e) => setUsername(e.target.value)} className={classes.input}/>
           <input type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} className={classes.input} />
+          {emailAvailability && <p className={classes.message}>{emailAvailability}</p>}
 
           <input type="password" placeholder="Password..." onChange={handlePasswordChange} onFocus={handlePasswordFocus} 
           onBlur={handlePasswordBlur} className={`${classes.input} ${
@@ -88,7 +114,7 @@ const Register = () => {
             )}
           </div>
 
-          <button type="submit">Register</button>
+          <button type="submit">Register  <Link to="/login"></Link></button>
           <p>
             Already have an account? <Link to="/login">Login</Link>
           </p>

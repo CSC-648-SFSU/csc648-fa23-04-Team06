@@ -14,7 +14,7 @@
 }
 
 .wrapper{
-    height: 52.5vh;
+    height: auto;
     width: 25vw;
     border-radius: 20px;
     display: flex;
@@ -41,6 +41,7 @@ form > input{
     outline: none;
     border: none;
     border-bottom: 1px solid #333;
+    margin-top: -25px
 }
 
 form > button{
@@ -59,4 +60,12 @@ form>button:hover{
     background-color: #fff;
     border-color: #f8d9c6;
     color: #f8d9c6;
+}
+
+.error {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-top: -35px;
+    color: red;
 }

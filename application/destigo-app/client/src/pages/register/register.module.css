@@ -95,3 +95,11 @@ form > p > a{
   .password-indicator.invalid {
     color: red;
   }
+
+  .message {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-top: -35px;
+    color: red;
+  }
