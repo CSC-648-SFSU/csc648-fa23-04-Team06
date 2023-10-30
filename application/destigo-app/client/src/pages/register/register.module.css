@@ -14,7 +14,7 @@
 }
 
 .wrapper{
-    height: 60vh;
+    height: auto;
     width: 27.5vw;
     border-radius: 20px;
     display: flex;
@@ -42,6 +42,7 @@ form > input{
     border: none;
     border-bottom: 1px solid #333;
 }
+
 
 form > button{
     outline: none;
@@ -74,3 +75,31 @@ form > p > a{
     color: #888;
     margin-top: 0.25rem;
 }
+
+.password-indicator {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-top: -35px;
+  }
+  
+  .password-indicator .icon {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+  
+  .password-indicator.valid {
+    color: green;
+  }
+  
+  .password-indicator.invalid {
+    color: red;
+  }
+
+  .message {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-top: -35px;
+    color: red;
+  }
