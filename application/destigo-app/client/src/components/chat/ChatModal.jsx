@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import classes from "./ChatModal.module.css";
 
+const BASE_URL = "https://destigo-backend.onrender.com"; 
+//const BASE_URL = "http://localhost:8800"; 
+
 const ChatModal = () => {
   const [messages, setMessages] = useState([]);
   const [friends, setFriends] = useState([
-    // { id: 1, name: "Alice" },
-    // { id: 2, name: "Bob" },
-    // { id: 3, name: "Charlie" },
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
   ]);
   const [showModal, setShowModal] = useState(false);
   const [selectedFriend, setSelectedFriend] = useState(null);
@@ -20,21 +23,22 @@ const ChatModal = () => {
 
   useEffect(() => {
     if (selectedFriend) {
-      fetch(`/api/messages?to=${selectedFriend.id}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setMessages(data.messages);
-          //setMessages(messages.filter((message) => message.to === selectedFriend.name));
-        });
+      // fetch(`/api/messages?to=${selectedFriend.id}`)
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     setMessages(data.messages);
+          setMessages(messages.filter((message) => message.to === selectedFriend.name));
+      //   });
      }
   }, [selectedFriend]);
 
   const handleSendMessage = () => {
     if (selectedFriend && messageValue) {
-      fetch("/api/messages", {
+      const url = BASE_URL + '/api/messages';
+      fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ from: "You", to: selectedFriend.name, text: messageValue }),
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify({ recipient: selectedFriend.name, text: messageValue }),
       })
         .then((response) => response.json())
         .then((data) => {
@@ -46,6 +50,19 @@ const ChatModal = () => {
     }
   };
 
+  const handleShowConvo = () => {
+      const url = BASE_URL + '/api/messages/showConvo';
+      fetch(url, {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          //only works for one message breaks when there is two.
+          const dataString = JSON.stringify(data).substring(1, JSON.stringify(data).length-1);
+          const dataObj = JSON.parse(dataString);
+          document.getElementById('convoOutput').innerHTML = dataObj.text;
+        });  
+  };
   // const handleSendMessage = () => {
   //   if (selectedFriend && messageValue) {
   //     const newMessage = { id: messages.length + 1, from: "You", to: selectedFriend.name, text: messageValue };
@@ -125,7 +142,7 @@ const ChatModal = () => {
               </div>
               {selectedFriend && (
                 <div className={classes["chat-modal-chat"]}>
-                  <div className={classes["chat-modal-messages"]}>
+                  {/* <div className={classes["chat-modal-messages"]}>
                     {messages.map((message) => (
                       <div
                       key={message.id}
@@ -139,7 +156,7 @@ const ChatModal = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
                   <div className={classes["chat-modal-input"]}>
                     <input
                       type="text"
@@ -150,6 +167,10 @@ const ChatModal = () => {
                     <Button variant="primary" onClick={handleSendMessage}>
                       Send
                     </Button>
+                    <Button variant="primary" onClick={handleShowConvo}>
+                      Show Conversation
+                    </Button>
+                    <p id="convoOutput"></p>
                   </div>
                 </div>
               )}
