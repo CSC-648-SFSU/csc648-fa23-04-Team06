@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import classes from "./ChatModal.module.css";
 
+const BASE_URL = "https://destigo-backend.onrender.com"; 
+//const BASE_URL = "http://localhost:8800"; 
+
 const ChatModal = () => {
   const [messages, setMessages] = useState([]);
   const [friends, setFriends] = useState([
-    // { id: 1, name: "Alice" },
-    // { id: 2, name: "Bob" },
-    // { id: 3, name: "Charlie" },
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
   ]);
   const [showModal, setShowModal] = useState(false);
   const [selectedFriend, setSelectedFriend] = useState(null);
@@ -20,21 +23,22 @@ const ChatModal = () => {
 
   useEffect(() => {
     if (selectedFriend) {
-      fetch(`/api/messages?to=${selectedFriend.id}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setMessages(data.messages);
-          //setMessages(messages.filter((message) => message.to === selectedFriend.name));
-        });
+      // fetch(`/api/messages?to=${selectedFriend.id}`)
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     setMessages(data.messages);
+          setMessages(messages.filter((message) => message.to === selectedFriend.name));
+      //   });
      }
   }, [selectedFriend]);
 
   const handleSendMessage = () => {
     if (selectedFriend && messageValue) {
-      fetch("/api/messages", {
+      const url = BASE_URL + '/api/messages';
+      fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ from: "You", to: selectedFriend.name, text: messageValue }),
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify({ recipient: selectedFriend.name, text: messageValue }),
       })
         .then((response) => response.json())
         .then((data) => {
