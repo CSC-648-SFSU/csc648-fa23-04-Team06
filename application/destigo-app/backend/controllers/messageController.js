@@ -1,15 +1,16 @@
 const express = require('express');
 const messageController = express.Router();
 const Message = require('../models/Message');
-// const verifyToken = require('../middlewares/verifyToken');
+const verifyToken = require('../middlewares/verifyToken');
 const { default: mongoose } = require('mongoose');
 
-messageController.post('/', async (req, res) => {
+messageController.post('/', verifyToken, async (req, res) => {
   try {
     const message = await Message.findOne({message: req.body.text});
     const recipient = await Message.findOne({recipient: req.body.recipient});
 
-    const uid = new mongoose.Types.ObjectId();
+    //const uid = new mongoose.Types.ObjectId();
+    const uid = req.user.id;
 
     const newMessage = await Message.create({ ...req.body, userId: uid});
 

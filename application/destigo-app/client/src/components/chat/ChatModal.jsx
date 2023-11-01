@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import classes from "./ChatModal.module.css";
+import { useSelector } from "react-redux";
 
-const BASE_URL = "https://destigo-backend.onrender.com"; 
-//const BASE_URL = "http://localhost:8800"; 
+//const BASE_URL = "https://destigo-backend.onrender.com"; 
+const BASE_URL = "http://localhost:8800"; 
 
 const ChatModal = () => {
   const [messages, setMessages] = useState([]);
@@ -16,6 +17,8 @@ const ChatModal = () => {
   const [selectedFriend, setSelectedFriend] = useState(null);
   const [messageValue, setMessageValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
+  const { token } = useSelector((state) => state.auth);
+
 
   useEffect(() => {
     setShowModal(true);
@@ -37,7 +40,7 @@ const ChatModal = () => {
       const url = BASE_URL + '/api/messages';
       fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}`},
         body: JSON.stringify({ recipient: selectedFriend.name, text: messageValue }),
       })
         .then((response) => response.json())
