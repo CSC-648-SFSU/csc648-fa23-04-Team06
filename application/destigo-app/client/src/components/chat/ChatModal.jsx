@@ -74,11 +74,9 @@ const ChatModal = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          //only works for one message breaks when there is two.
-          const dataString = JSON.stringify(data).substring(1, JSON.stringify(data).length-1);
-          const dataObj = JSON.parse(dataString);
-          document.getElementById('convoOutput').innerHTML = dataObj.text;
-        });  
+          const text = data.map(message => message.text).join(' ');
+          setConvoOutput(text);
+        });
   };
   // const handleSendMessage = () => {
   //   if (selectedFriend && messageValue) {
