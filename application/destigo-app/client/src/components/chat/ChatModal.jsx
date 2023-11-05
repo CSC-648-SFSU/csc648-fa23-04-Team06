@@ -4,7 +4,7 @@ import classes from "./ChatModal.module.css";
 import { useSelector } from "react-redux";
 
 //const BASE_URL = "https://destigo-backend.onrender.com"; 
-const BASE_URL = "http://localhost:8800"; 
+const BASE_URL = "https://destigo-backend.onrender.com"; 
 
 const ChatModal = () => {
   const { user, token } = useSelector((state) => state.auth);
