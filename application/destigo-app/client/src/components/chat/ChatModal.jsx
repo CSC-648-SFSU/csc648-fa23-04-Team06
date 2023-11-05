@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import classes from "./ChatModal.module.css";
+import { useSelector } from "react-redux";
 
-const BASE_URL = "https://destigo-backend.onrender.com"; 
-//const BASE_URL = "http://localhost:8800"; 
+//const BASE_URL = "https://destigo-backend.onrender.com"; 
+const BASE_URL = "http://localhost:8800"; 
 
 const ChatModal = () => {
+  const { user, token } = useSelector((state) => state.auth);
+  const userObjectId = user ? user._id : null;
   const [messages, setMessages] = useState([]);
   const [friends, setFriends] = useState([
     { id: 1, name: "Alice" },
@@ -16,6 +19,7 @@ const ChatModal = () => {
   const [selectedFriend, setSelectedFriend] = useState(null);
   const [messageValue, setMessageValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
+  const [convoOutput, setConvoOutput] = useState("");
 
   useEffect(() => {
     setShowModal(true);
@@ -23,13 +27,24 @@ const ChatModal = () => {
 
   useEffect(() => {
     if (selectedFriend) {
-      // fetch(`/api/messages?to=${selectedFriend.id}`)
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     setMessages(data.messages);
-          setMessages(messages.filter((message) => message.to === selectedFriend.name));
-      //   });
-     }
+      fetch(`/api/messages?to=${selectedFriend.id}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data && data.messages) {
+            setMessages(data.messages);
+          } else {
+            setMessages([]);
+          }
+        })
+        .catch((error) => {
+          console.error("There has been a problem with your fetch operation:", error);
+        });
+    }
   }, [selectedFriend]);
 
   const handleSendMessage = () => {
@@ -37,12 +52,13 @@ const ChatModal = () => {
       const url = BASE_URL + '/api/messages';
       fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json"},
-        body: JSON.stringify({ recipient: selectedFriend.name, text: messageValue }),
+        headers: { "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`},
+        body: JSON.stringify({ userId: userObjectId, recipient: selectedFriend.name, text: messageValue }),
       })
         .then((response) => response.json())
         .then((data) => {
-          setMessages(data.messages);
+          setMessages(...messages, data.messages);
           setMessageValue("");
         });
     } else {
@@ -54,14 +70,13 @@ const ChatModal = () => {
       const url = BASE_URL + '/api/messages/showConvo';
       fetch(url, {
         method: "GET",
+        headers: { "Authorization": `Bearer ${token}`},
       })
         .then((response) => response.json())
         .then((data) => {
-          //only works for one message breaks when there is two.
-          const dataString = JSON.stringify(data).substring(1, JSON.stringify(data).length-1);
-          const dataObj = JSON.parse(dataString);
-          document.getElementById('convoOutput').innerHTML = dataObj.text;
-        });  
+          const text = data.map(message => message.text).join(' ');
+          setConvoOutput(text);
+        });
   };
   // const handleSendMessage = () => {
   //   if (selectedFriend && messageValue) {
@@ -142,8 +157,8 @@ const ChatModal = () => {
               </div>
               {selectedFriend && (
                 <div className={classes["chat-modal-chat"]}>
-                  {/* <div className={classes["chat-modal-messages"]}>
-                    {messages.map((message) => (
+                  <div className={classes["chat-modal-messages"]}>
+                    {messages && messages.map((message) => (
                       <div
                       key={message.id}
                       className={classes["chat-modal-message"]}
@@ -156,7 +171,7 @@ const ChatModal = () => {
                         </div>
                       </div>
                     ))}
-                  </div> */}
+                  </div> 
                   <div className={classes["chat-modal-input"]}>
                     <input
                       type="text"
@@ -170,7 +185,7 @@ const ChatModal = () => {
                     <Button variant="primary" onClick={handleShowConvo}>
                       Show Conversation
                     </Button>
-                    <p id="convoOutput"></p>
+                    <p> {convoOutput} </p>
                   </div>
                 </div>
               )}
