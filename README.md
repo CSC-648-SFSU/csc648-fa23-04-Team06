@@ -3,8 +3,7 @@
 **Application URL: https://destigo-app-client-frontend.vercel.app**<br>
 **About Page URL: https://csc648-fa23-04-team06.vercel.app** 
 
-<br><br>
-
+<br>
 
 | Student Name | Student Email | GitHub Username | Student's role |
 | :----------: | :-----------: | :-------------: | :------------: |

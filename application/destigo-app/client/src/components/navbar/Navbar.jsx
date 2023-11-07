@@ -64,7 +64,6 @@ const Navbar = () => {
           />
           {isAuthenticated && showModal && (
             <div className={classes.modal}>
-              <Link to="/create">Create</Link>
               <Link to="/friends">Friends</Link>
               <Link onClick={() => {
                 setShowChatModal(true);
