@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 // cors 
 const allowedOrigins = [
   'https://destigo-app-client-frontend.vercel.app' // CORS Rule for Production URL
-
+  
 ];
 
 const corsOptions = {

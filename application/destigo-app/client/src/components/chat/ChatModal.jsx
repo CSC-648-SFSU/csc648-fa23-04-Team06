@@ -3,8 +3,8 @@ import { Modal, Button } from "react-bootstrap";
 import classes from "./ChatModal.module.css";
 import { useSelector } from "react-redux";
 
-//const BASE_URL = "https://destigo-backend.onrender.com"; 
 const BASE_URL = "https://destigo-backend.onrender.com"; 
+//const BASE_URL = "http://localhost:8800"; 
 
 const ChatModal = () => {
   const { user, token } = useSelector((state) => state.auth);
@@ -26,25 +26,26 @@ const ChatModal = () => {
   }, []);
 
   useEffect(() => {
-    if (selectedFriend) {
-      fetch(`/api/messages?to=${selectedFriend.id}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          if (data && data.messages) {
-            setMessages(data.messages);
-          } else {
-            setMessages([]);
-          }
-        })
-        .catch((error) => {
-          console.error("There has been a problem with your fetch operation:", error);
-        });
-    }
+    setMessages(messages.filter((message) => message.to === selectedFriend.name));
+    // if (selectedFriend) {
+    //   fetch(`/api/messages?to=${selectedFriend.id}`)
+    //     .then((response) => {
+    //       if (!response.ok) {
+    //         throw new Error("Network response was not ok");
+    //       }
+    //       return response.json();
+    //     })
+    //     .then((data) => {
+    //       if (data && data.messages) {
+    //         setMessages(data.messages);
+    //       } else {
+    //         setMessages([]);
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.error("There has been a problem with your fetch operation:", error);
+    //     });
+    // }
   }, [selectedFriend]);
 
   const handleSendMessage = () => {
@@ -58,7 +59,7 @@ const ChatModal = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          setMessages(...messages, data.messages);
+          setMessages(data.messages);
           setMessageValue("");
         });
     } else {
