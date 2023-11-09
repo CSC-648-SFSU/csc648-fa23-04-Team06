@@ -9,10 +9,7 @@ messageController.post('/', verifyToken, async (req, res) => {
     const message = await Message.findOne({message: req.body.text});
     const recipient = await Message.findOne({recipient: req.body.recipient});
 
-    //const uid = new mongoose.Types.ObjectId();
-    const uid = req.user.id;
-
-    const newMessage = await Message.create({ ...req.body, userId: uid});
+    const newMessage = await Message.create({ ...req.body, userId: req.user.id});
 
     // Return a success message without a token
     return res.status(201).json({ message: "Message Sent!" });
