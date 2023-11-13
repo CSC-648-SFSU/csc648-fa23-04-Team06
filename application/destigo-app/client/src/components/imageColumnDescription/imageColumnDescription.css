@@ -1,0 +1,71 @@
+.image-column-description {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(255, 251, 251);
+}
+
+.centered-heading{
+  margin-top: 4%;
+  color: #333;
+  margin-bottom: 4%;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2%;
+}
+
+.image-item {
+  text-align: left;
+  margin: 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Center items vertically */
+  height: 100%; /* Set a fixed height for consistent alignment */
+}
+
+.image-item img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.image-item h2 {
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.image-item p {
+  color: #666;
+  text-align: left;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+/* Styling for the button */
+.image-item button {
+  margin-top: 3%;
+  background-color: #F1D0B6;
+  color: #000000;
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 13px;
+}
+
+/* Hover effect for the button */
+.image-item button:hover {
+  background-color: #000000;
+  color: #F1D0B6;
+}
