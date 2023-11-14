@@ -1,71 +1,107 @@
-.container{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-image: url('../../assets/losangeles.png');
-    background-color: rgba(0, 0, 0, 0.2);
-    background-size: cover;
-    background-blend-mode: darken;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/sanfrancisco.png");
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.wrapper{
-    height: auto;
-    width: 25vw;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
+.wrapper {
+  height: auto;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #fcf1e9;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.wrapper > h2{
-    color: #000000;
-    text-align: center;
-    margin: 2.5rem 0;
-    font-size: 36px;
+.wrapper > h2 {
+  color: #000000;
+  text-align: center;
+  margin: 2.5rem 0;
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 3%;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 42px;
+.wrapper > h3 {
+    font-size: 16px;
+    margin-bottom: 15%;
+    font-weight: 400;
 }
 
-form > input{
-    width: 50%;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #333;
-    margin-top: -25px
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
 }
 
-form > button{
-    outline: none;
-    background-color: #f8d9c6;
-    color: #000000;
-    border-radius: 12px;
-    padding: 0.5rem 1.25rem;
-    font-size: 18px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    margin-top: 1rem;
+form > p{
+    margin-bottom: 5%;
+    text-decoration: none;
+
 }
 
-form>button:hover{
-    background-color: #fff;
-    border-color: #f8d9c6;
+form > input {
+  width: 55%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #333;
+  margin-top: -25px;
+  background-color: #fcf1e9;
+  font-size: 15px;
+  transition: 0.2s ease-in-out;
+}
+
+form > input:hover{
+    border-bottom: 2px solid black;
+}
+
+form > input:focus{
+    border-bottom: 2px solid black;
+}
+
+form > button {
+  outline: none;
+  background-color: #f5c9ad;
+  color: #000000;
+  padding: 0.25rem 0.675rem;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  border: none;
+  width: 55%;
+}
+
+form> button:hover{
+    background-color: #000000;
     color: #f8d9c6;
 }
 
+form > h6{
+    padding-bottom: 10%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+
+
 .error {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    margin-top: -35px;
-    color: red;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-top: -35px;
+  color: rgb(147, 0, 0);
+  background-color: rgb(255, 207, 207);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

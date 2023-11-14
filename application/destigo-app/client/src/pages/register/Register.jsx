@@ -88,7 +88,8 @@ const Register = () => {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
-        <h2>Register</h2>
+        <h2>🥳 Welcome to DestiGo!</h2>
+        <h3> Create an account</h3>
         <form onSubmit={handleRegister}>
           <input type="text" placeholder="Username..." onChange={(e) => setUsername(e.target.value)} className={classes.input}/>
           <input type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} className={classes.input} />
@@ -108,16 +109,16 @@ const Register = () => {
               >
                 <span className="icon">{isPasswordValid}</span>
                 {isPasswordValid
-                  ? 'Password is valid'
+                  ? 'Password is secure'
                   : 'Password must be more than 8 characters'}
               </div>
             )}
           </div>
 
-          <button type="submit">Register  <Link to="/login"></Link></button>
-          <p>
+          <button type="submit">{"Register ->"} <Link to="/login"></Link></button>
+          <h6>
             Already have an account? <Link to="/login">Login</Link>
-          </p>
+          </h6>
         </form>
       </div>
     </div>
