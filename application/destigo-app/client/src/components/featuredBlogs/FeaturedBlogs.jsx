@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import classes from './featuredBlogs.module.css'
 import goldentemple from '../../assets/goldentemple.png'
 import losangeles from '../../assets/losangeles.png'
 import sanfrancsisco from '../../assets/sanfrancisco.png'
 import {MdOutlinePreview} from 'react-icons/md'
 import {AiFillLike} from 'react-icons/ai'
+import { useSelector } from 'react-redux';
+
+
 
 const FeaturedBlogs = () => {
+  const isNotLoggedIn = useSelector((state) => state.auth.user === null);
+  const isLoggedIn = useSelector((state) => state.auth.user !== null);
+  const username = useSelector((state) => state.auth.user?.username);
+
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <h3>Community</h3>
+        <div className={classes.loginMessage}>
+        {isNotLoggedIn && <p>Please <a href="/login">Log In</a> to explore the DestiGo Community!</p>}
+        {isLoggedIn && <p>Welcome back, <span>{username}</span>! </p>}
+        </div>
         <h2>Featured Posts</h2>
         <div className={classes.blogs}>
           <div className={classes.left}>
