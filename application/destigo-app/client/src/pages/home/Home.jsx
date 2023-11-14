@@ -13,12 +13,13 @@ import ImgParis from "../../assets/paris.png";
 import ImgDelta from "../../assets/delta.png";
 import ImgEtihad from "../../assets/etihad.png";
 import ImgEmirates from "../../assets/emirates.png";
+import Newsletter from "../../components/newsletter/Newsletter";
 
 
 const Home = () => {
   const PopularDestinationData = [
-    // This ImageColumnDescription Component is suitable for upto 3 columns,
-    // please don't add more than 3 objects in the array.
+    // This ImageColumnDescription Component is suitable for upto 12 columns,
+    // please don't add more than 12 objects in the array.
     {
       src: ImgLondon,
       alt: "London, United Kingdom",
@@ -45,12 +46,11 @@ const Home = () => {
         "Bali, the Island of the Gods, is a tropical haven where lush rice terraces, ancient temples like Uluwatu, and beachside charm in Seminyak converge, inviting visitors to explore a unique blend of spirituality and natural beauty.",
       button: "Fly to Bali ->",
       url: "/flights",
-    },
+    }
   ];
 
   const AirlinePartnersData = [
-    // This ImageColumnDescription Component is suitable for upto 3 columns,
-    // please don't add more than 3 objects in the array.
+  
     {
       src: ImgEtihad,
       alt: "Etihad Airways",
@@ -97,12 +97,15 @@ const Home = () => {
       <ImageColumnDescription
         heading="Popular Destinations"
         column={PopularDestinationData}
+        
       />
 
       <ImageColumnDescription
         heading="Our Airline Partners"
         column={AirlinePartnersData}
+        backgroundColor="#fcf2f2"
       />
+      <Newsletter />
 
       <Footer />
     </>

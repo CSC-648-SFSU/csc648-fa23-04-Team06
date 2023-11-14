@@ -1,105 +1,134 @@
-.container{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-image: url('../../assets/sanfrancisco.png');
-    background-color: rgba(0, 0, 0, 0.3);
-    background-size: cover;
-    background-blend-mode: darken;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/sanfrancisco.png");
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.wrapper{
-    height: auto;
-    width: 27.5vw;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
+.wrapper {
+  height: auto;
+  width: 26vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #fcf1e9;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.wrapper > h2{
+.wrapper > h2 {
+  color: #000000;
+  text-align: center;
+  margin: 2.5rem 0;
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 3%;
+}
+
+.wrapper > h3 {
+  font-size: 16px;
+  margin-bottom: 15%;
+  font-weight: 400;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+}
+
+form > input {
+  width: 55%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+
+form > button {
+    outline: none;
+    background-color: #f5c9ad;
     color: #000000;
-    text-align: center;
-    margin: 2.5rem 0;
-    font-size: 36px;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 42px;
-}
-
-form > input{
-    width: 50%;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #333;
-}
-
-
-form > button{
-    outline: none;
-    background-color: #f8d9c6;
-    color: black;
-    border-radius: 12px;
-    padding: 0.5rem 1.25rem;
-    font-size: 18px;
+    padding: 0.25rem 0.675rem;
+    font-size: 16px;
     cursor: pointer;
-    border: 1px solid transparent;
+    transition: 0.1s ease-in-out;
+    border: none;
+    width: 55%;
 }
 
-form > button:hover{
-    background-color: #000000;
-    border-color: #000000;
-    color: #f8d9c6;
+form > button:hover {
+  background-color: #000000;
+  border-color: #000000;
+  color: #f8d9c6;
 }
 
-form > p{
-    text-align: center;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+form > p {
+  text-align: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-form > p > a{
-    text-decoration: none;
-    font-size: 17px;
-    color: #888;
-    margin-top: 0.25rem;
+form > p > a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #888;
+  margin-top: 0.25rem;
 }
 
 .password-indicator {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    margin-top: -35px;
-  }
-  
-  .password-indicator .icon {
-    margin-right: 5px;
-    font-size: 16px;
-  }
-  
-  .password-indicator.valid {
-    color: green;
-  }
-  
-  .password-indicator.invalid {
-    color: red;
-  }
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-top: -35px;
+}
 
-  .message {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    margin-top: -35px;
-    color: red;
-  }
+.password-indicator .icon {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.password-indicator.valid {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-top: -28px;
+  color: rgb(32, 128, 0);
+  background-color: rgb(206, 255, 206);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.password-indicator.invalid {
+  margin-top: -28px;
+
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  color: rgb(147, 0, 0);
+  background-color: rgb(255, 207, 207);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.message {
+  margin-top: -28px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  color: rgb(147, 0, 0);
+  background-color: rgb(255, 207, 207);
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
