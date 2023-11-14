@@ -25,8 +25,8 @@ function App() {
         <Route path="/hotels" element={<Hotels/>}> </Route>
         <Route path="/flights" element={<Flights/>}> </Route>
         <Route path="/events" element={<Events/>}> </Route>
-        <Route path='/blog' element={user ? <Blog /> : <Navigate to='/login' />} />
-        <Route path='/login' element={!user ? <Login /> : <Navigate to='/blog' />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
         <Route path='/register' element={!user ? <Register /> : <Navigate to='/' />} />
         <Route path='/create' element={user ? <Create /> : <Navigate to='/login' />} />
         <Route path='/blogDetails/:id' element={user ? <BlogDetails /> : <Navigate to='/login' />} />
