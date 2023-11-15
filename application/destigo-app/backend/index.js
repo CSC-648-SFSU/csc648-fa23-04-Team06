@@ -5,6 +5,8 @@ const cors = require("cors");
 const authController = require("./controllers/authController");
 const blogController = require("./controllers/blogController");
 const messageController = require("./controllers/messageController");
+const subscribeRoutes = require("./routes/subscribeRoutes");
+
 const multer = require("multer");
 const app = express();
 
@@ -25,7 +27,6 @@ app.get("/", (req, res) => {
 // cors 
 const allowedOrigins = [
   'https://destigo-app-client-frontend.vercel.app' // CORS Rule for Production URL
-  
 ];
 
 const corsOptions = {
@@ -46,6 +47,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authController);
 app.use("/blog", blogController);
 app.use("/api/messages", messageController);
+app.use('/api', subscribeRoutes);
+
 
 // multer
 const storage = multer.diskStorage({
