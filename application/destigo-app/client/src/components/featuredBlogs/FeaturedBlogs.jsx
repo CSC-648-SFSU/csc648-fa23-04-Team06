@@ -20,7 +20,7 @@ const FeaturedBlogs = () => {
         <h3>Community</h3>
         <div className={classes.loginMessage}>
         {isNotLoggedIn && <p>Please <a href="/login">Log In</a> to explore the DestiGo Community!</p>}
-        {isLoggedIn && <p>Welcome back, <span>{username}</span>! </p>}
+        {isLoggedIn && <p>👋🏻 &nbsp;&nbsp;Welcome back, <span>{username}</span>! </p>}
         </div>
         <h2>Featured Posts</h2>
         <div className={classes.blogs}>

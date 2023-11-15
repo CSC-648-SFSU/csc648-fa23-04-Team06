@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/authSlice";
 import ChatModal from "../chat/ChatModal";
-import { AiFillCaretDown, AiFillCaretUp} from "react-icons/ai";
+import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -89,7 +89,7 @@ const Navbar = () => {
           </li>
         </div>
         <div className={classes.right}>
-        <div className={classes.loginHandler} onClick={handleImageClick}>
+          <div className={classes.loginHandler} onClick={handleImageClick}>
             {isNotLoggedIn && (
               <p>
                 <a href="/login">Log In / Sign Up</a>
@@ -98,7 +98,11 @@ const Navbar = () => {
             {isLoggedIn && (
               <p>
                 <span>{username}</span>
-                {showModal ? <AiFillCaretUp color="ffcfaf" /> : <AiFillCaretDown color="#ffcfaf" />}
+                {showModal ? (
+                  <AiFillCaretUp color="#ffcfaf" />
+                ) : (
+                  <AiFillCaretDown color="#ffcfaf" />
+                )}
               </p>
             )}
           </div>
