@@ -6,12 +6,15 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/authSlice";
 import ChatModal from "../chat/ChatModal";
+import FriendsList from '../friends/FriendsList';
 
 
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [showChatModal, setShowChatModal] = useState(false);
+  const [showFriendsList, setShowFriendsList] = useState(false);
+  const [friends, setFriends] = useState([]);
 
   const isAuthenticated = useSelector((state) => state.auth.user !== null);
   const dispatch = useDispatch();
@@ -64,7 +67,7 @@ const Navbar = () => {
           />
           {isAuthenticated && showModal && (
             <div className={classes.modal}>
-              <Link to="/friends">Friends</Link>
+              <span onClick={() => setShowFriendsList(true)}>Friends</span>
               <Link onClick={() => {
                 setShowChatModal(true);
                 setShowModal(false);
@@ -81,6 +84,9 @@ const Navbar = () => {
           )}
           {showChatModal && (
             <ChatModal onClose={() => setShowChatModal(false)} />
+          )}
+          {showFriendsList && (
+            <FriendsList friends={friends} setFriends={setFriends} onClose={() => setShowFriendsList(false)} />
           )}
         </div>
       </div>
