@@ -26,6 +26,12 @@
 .left > a {
   text-decoration: none;
   color: black;
+  transition: 0.2s all;
+}
+
+.left > a:hover {
+  text-decoration: none;
+  color: #923a00;
 }
 
 /* center */

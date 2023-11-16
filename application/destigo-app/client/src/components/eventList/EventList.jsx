@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './EventsList.css';
 import { BASE_URL } from '../../utils/fetchApi';
-import { AiOutlineSearch, AiFillCalendar, AiFillPushpin } from 'react-icons/ai';
+import { AiOutlineSearch, AiFillCalendar, AiOutlineGlobal, AiTwotoneCalendar } from 'react-icons/ai';
 
 const EventList = () => {
   const [events, setEvents] = useState([]);
@@ -74,11 +74,11 @@ const EventList = () => {
               <strong className="event-title">{event.title}</strong>
               <p className="event-description">{event.description}</p>
               <p className="event-date">
-                <AiFillCalendar />
+                <AiTwotoneCalendar />
                 {formattedDate(event.date)}
               </p>
               <p className="event-location">
-                <AiFillPushpin />
+                <AiOutlineGlobal />
                 {event.location}
               </p>
             </li>

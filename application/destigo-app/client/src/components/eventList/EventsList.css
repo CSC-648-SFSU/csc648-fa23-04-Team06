@@ -10,16 +10,13 @@
   margin-bottom: 1rem;
   position: relative;
   width: 40%;
-
 }
 
 .search-icon {
   font-size: 40px;
   display: flex;
   color: rgb(60, 60, 60);
-  color: #923a00;
-
-  
+  color: #923a00; 
 }
 
 .search-type-dropdown {
@@ -76,7 +73,7 @@
 }
 
 .event-item {
-  width: 30%; /* Set the width to approximately 30% to display three events per row */
+  width: 30%; 
   margin-bottom: 20px;
   padding: 20px;
   box-sizing: border-box;
@@ -100,4 +97,22 @@
   margin-bottom: 10px;
   font-size: 0.9rem;
   color: rgb(62, 62, 62);
+}
+
+.event-date{
+  display: flex;
+  align-items: center;
+}
+
+.event-date svg{
+  margin-right: 5px;
+}
+
+.event-location {
+  display: flex;
+  align-items: center;
+}
+
+.event-location svg {
+  margin-right: 5px; /* Adjust the margin as needed */
 }
