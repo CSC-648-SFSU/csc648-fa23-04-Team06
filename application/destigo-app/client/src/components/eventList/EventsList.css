@@ -16,7 +16,7 @@
   font-size: 40px;
   display: flex;
   color: rgb(60, 60, 60);
-  color: #923a00; 
+  color: #923a00;
 }
 
 .search-type-dropdown {
@@ -35,12 +35,10 @@
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   width: auto;
-
 }
 
 .search-type-dropdown:hover {
   background-color: #ffc198;
-
 }
 .event-search-bar {
   margin-left: 0%;
@@ -58,7 +56,7 @@
   color: #923a00;
 }
 
-.event-search-bar:hover{
+.event-search-bar:hover {
   background-color: #ffc198;
 }
 
@@ -73,11 +71,13 @@
 }
 
 .event-item {
-  width: 30%; 
+  width: 30%;
   margin-bottom: 20px;
   padding: 20px;
   box-sizing: border-box;
   margin: 1%;
+  background-color: #f8eee8;
+  border-radius: 10px;
 }
 
 .event-image {
@@ -99,12 +99,12 @@
   color: rgb(62, 62, 62);
 }
 
-.event-date{
+.event-date {
   display: flex;
   align-items: center;
 }
 
-.event-date svg{
+.event-date svg {
   margin-right: 5px;
 }
 
