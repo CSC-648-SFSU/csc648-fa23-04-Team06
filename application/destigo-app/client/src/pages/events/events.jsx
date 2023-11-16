@@ -8,9 +8,11 @@ import EventList from "../../components/eventList/EventList";
 const events = () => {
   return (
     <>
-      <Navbar />
+       <Navbar />
+    <div className="events-container">
       <Header header={"Events"} />
       <EventList/>
+      </div>
       <Footer />
     </>
   );

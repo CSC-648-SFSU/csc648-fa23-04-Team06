@@ -5,6 +5,7 @@ import { BASE_URL } from '../../utils/fetchApi';
 const EventForm = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
   const [image, setImage] = useState(''); // Declare and initialize the image state
 
@@ -24,6 +25,7 @@ const EventForm = () => {
         title,
         description: trimmedDescription,
         date,
+        location,
         image,
         // Add other event properties as needed
       });
@@ -34,6 +36,8 @@ const EventForm = () => {
       setTitle('');
       setDescription('');
       setDate('');
+      setLocation('');
+
       setImage('');
     } catch (error) {
       console.error('Error posting event:', error);
@@ -46,7 +50,9 @@ const EventForm = () => {
       <form onSubmit={handleFormSubmit}>
         <label>Title:</label>
         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <label>Location:</label>
 
+        <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} required />
         <label>Description:</label>
         <textarea
           value={description}

@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import "./about.css";
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/header";
 import ImageColumnDescription from "../../components/imageColumnDescription/imageColumnDescription";
 import ImgBear from "../../assets/AboutPageImages/bear.png";
 import ImgFox from "../../assets/AboutPageImages/fox.png";

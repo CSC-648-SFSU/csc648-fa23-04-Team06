@@ -10,7 +10,7 @@ exports.getAllEvents = async (req, res) => {
 };
 
 exports.postEvent = async (req, res) => {
-  const { title, description, date, image } = req.body;
+  const { title, description, location, date, image } = req.body;
 
   // Ensure that the required fields are present in the request body
   if (!title || !description || !date) {
@@ -20,6 +20,7 @@ exports.postEvent = async (req, res) => {
   const event = new Event({
     title,
     description,
+    location,
     date,
     image,
     // Add other event properties as needed

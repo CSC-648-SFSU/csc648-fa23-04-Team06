@@ -9,6 +9,10 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  location: {
+    type: String,
+    required: true,
+  },
   image: {
     type: String, // We store the image URL as a string
     required: false,

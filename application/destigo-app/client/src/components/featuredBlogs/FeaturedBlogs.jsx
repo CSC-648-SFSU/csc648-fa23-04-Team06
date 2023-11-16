@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import classes from './featuredBlogs.module.css'
 import goldentemple from '../../assets/goldentemple.png'
 import losangeles from '../../assets/losangeles.png'

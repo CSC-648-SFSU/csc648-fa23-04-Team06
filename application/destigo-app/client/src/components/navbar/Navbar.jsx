@@ -24,9 +24,7 @@ const Navbar = () => {
     }
   };
 
-  function handleCloseModal() {
-    setShowModal(false);
-  }
+
 
   const isNotLoggedIn = useSelector((state) => state.auth.user === null);
   const isLoggedIn = useSelector((state) => state.auth.user !== null);
