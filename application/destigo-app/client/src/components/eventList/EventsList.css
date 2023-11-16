@@ -3,6 +3,16 @@
   background-color: #f8e8dd;
 }
 
+.no-results{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5rem;
+  font-weight: 400;
+  font-size: 16px;
+  
+}
+
 .event-list-search {
   margin-left: 7rem;
   display: flex;
@@ -59,6 +69,7 @@
 .event-search-bar:hover {
   background-color: #ffc198;
 }
+
 
 .event-list {
   margin-left: 5rem;

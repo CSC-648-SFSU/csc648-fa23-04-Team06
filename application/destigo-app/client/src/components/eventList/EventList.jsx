@@ -83,6 +83,9 @@ const EventList = () => {
         />
       </div>
       <div className="event-list-container">
+      {filteredEvents.length === 0 ? (
+          <p className="no-results">😭 No events found for your search!</p>
+        ) : (
         <ul className="event-list">
           {eventsToShow.map((event) => (
             <li key={event._id} className="event-item">
@@ -104,6 +107,10 @@ const EventList = () => {
             </li>
           ))}
         </ul>
+        )}
+        {filteredEvents.length === 0 ? (
+          <p className="no-results"></p>
+        ) : (
         <div className="pagination">
           <button
             className="page-button"
@@ -127,7 +134,9 @@ const EventList = () => {
             {"Next ->"}
           </button>
         </div>
+        )}
       </div>
+        
 
       <Newsletter />
     </>
