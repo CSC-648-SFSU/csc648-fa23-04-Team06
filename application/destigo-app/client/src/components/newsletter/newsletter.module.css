@@ -70,3 +70,29 @@
     cursor: pointer;
     
 }
+
+.successMessage{
+    color: rgb(0, 82, 10);
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(203, 255, 201);
+    border-radius: 50px;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+}
+
+.errorMessage{
+    color: rgb(82, 0, 0);
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(255, 201, 201);
+    border-radius: 50px;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+}

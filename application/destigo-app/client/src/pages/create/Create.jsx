@@ -65,15 +65,19 @@ const Create = () => {
     }
   };
 
+  const isLoggedIn = useSelector((state) => state.auth.user !== null);
+  const username = useSelector((state) => state.auth.user?.username);
+
+
   return (
     <>
       <Navbar />
+      
       <div className={classes.container}>
         <div className={classes.wrapper}>
           <h2 className={classes.title}>Create a post</h2>
           <form onSubmit={handleCreateBlog} encType="multipart/form-data">
             <div className={classes.inputWrapper}>
-              <label>Title: </label>
               <input
                 type="text"
                 placeholder="Title..."
@@ -82,16 +86,14 @@ const Create = () => {
               />
             </div>
             <div className={classes.inputWrapper}>
-              <label>Description: </label>
-              <input
-                type="text"
+              <textarea
                 placeholder="Description..."
-                className={classes.input}
+                className={classes.inputDesc}
                 onChange={(e) => setDesc(e.target.value)}
+                rows="5" // Adjust this value based on the desired initial number of visible lines
               />
             </div>
             <div className={classes.inputWrapperSelect}>
-              <label>Category: </label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
@@ -105,7 +107,7 @@ const Create = () => {
             </div>
             <div className={classes.inputWrapperImg}>
               <label htmlFor="image" className={classes.labelFileInput}>
-                Image: <span>Choose a file...</span>
+                <span>Upload an Image....</span> <p>Supported: PNG, JPG, JPEG</p>
               </label>
               <input
                 id="image"
@@ -126,8 +128,14 @@ const Create = () => {
             </div>
             <div className={classes.buttonWrapper}>
               <button className={classes.submitBtn} type="submit">
-                Post
+                Create Post
               </button>
+              {isLoggedIn && (
+              <p>
+             <span>  Post Author: {username}</span>
+              </p>
+            )}
+              <p>Creating a post on DestiGo means agreeing to our Privacy Policy, reinforcing our commitment to a secure online environment.</p>
             </div>
           </form>
         </div>

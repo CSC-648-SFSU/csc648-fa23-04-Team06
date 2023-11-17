@@ -1,14 +1,12 @@
 import React from "react";
 import classes from "./navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
-import womanImg from "../../assets/usericon.png";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/authSlice";
 import ChatModal from "../chat/ChatModal";
 import FriendsList from '../friends/FriendsList';
-
-
+import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -29,9 +27,11 @@ const Navbar = () => {
     }
   };
 
-  function handleCloseModal() {
-    setShowModal(false);
-  }
+
+
+  const isNotLoggedIn = useSelector((state) => state.auth.user === null);
+  const isLoggedIn = useSelector((state) => state.auth.user !== null);
+  const username = useSelector((state) => state.auth.user?.username);
 
   const handleFriendsListClose = () => {
     setShowFriendsList(false);
@@ -49,30 +49,73 @@ const Navbar = () => {
         </div>
         <div className={classes.center}>
           <li className={classes.listItem}>
-            <Link to="/" className={location.pathname === '/' ? classes.active : ''}>Home</Link>
+            <Link
+              to="/"
+              className={location.pathname === "/" ? classes.active : ""}
+            >
+              Home
+            </Link>
           </li>
           <li className={classes.listItem}>
-            <Link to="/about" className={location.pathname === '/about' ? classes.active : ''}>About</Link>
+            <Link
+              to="/about"
+              className={location.pathname === "/about" ? classes.active : ""}
+            >
+              About
+            </Link>
           </li>
           <li className={classes.listItem}>
-            <Link to="/flights" className={location.pathname === '/flights' ? classes.active : ''}>Flights</Link>
+            <Link
+              to="/flights"
+              className={location.pathname === "/flights" ? classes.active : ""}
+            >
+              Flights
+            </Link>
           </li>
           <li className={classes.listItem}>
-            <Link to="/hotels" className={location.pathname === '/hotels' ? classes.active : ''}>Hotels</Link>
+            <Link
+              to="/hotels"
+              className={location.pathname === "/hotels" ? classes.active : ""}
+            >
+              Hotels
+            </Link>
           </li>
           <li className={classes.listItem}>
-            <Link to="/events" className={location.pathname === '/events' ? classes.active : ''}>Events</Link>
+            <Link
+              to="/events"
+              className={location.pathname === "/events" ? classes.active : ""}
+            >
+              Events
+            </Link>
           </li>
           <li className={classes.listItem}>
-            <Link to="/blog" className={location.pathname === '/blog' ? classes.active : ''}>Community</Link>
+            <Link
+              to="/blog"
+              className={location.pathname === "/blog" ? classes.active : ""}
+            >
+              Community
+            </Link>
           </li>
         </div>
         <div className={classes.right}>
-          <img
-            onClick={handleImageClick}
-            src={womanImg}
-            className={classes.img}
-          />
+          <div className={classes.loginHandler} onClick={handleImageClick}>
+            {isNotLoggedIn && (
+              <p>
+                <a href="/login">Log In / Sign Up</a>
+              </p>
+            )}
+            {isLoggedIn && (
+              <p>
+                <span>{username}</span>
+                {showModal ? (
+                  <AiFillCaretUp color="#ffcfaf" />
+                ) : (
+                  <AiFillCaretDown color="#ffcfaf" />
+                )}
+              </p>
+            )}
+          </div>
+
           {isAuthenticated && showModal && (
             <div className={classes.modal}>
               <span onClick={() => setShowFriendsList(true)}>Friends</span>

@@ -1,123 +1,178 @@
 .container {
-    height: 60px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    left: 0;
-    background-color: #f3d9c5;
-    z-index: 10;
-  }
-  
-  .wrapper {
-    height: 100%;
-    width: 1180px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* left */
-  .left {
-    font-size: 28px;
-    font-weight: 650;
-  }
-  
-  .left > a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  /* center */
-  .center {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.5rem;
-    color: black;
-    text-decoration: none;
-  }
-  
-  .listItem a {
-    color: #000000;
-    cursor: pointer;
-    transition: 150ms all;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 400;
-    transition: 0.1s ease-in-out;
-    position: relative; /* Added */
+  height: 60px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #f3d9c5;
+  z-index: 10;
+}
 
-  }
-  
-  .listItem a:hover {
-    color: #000000;
-    font-weight: 700;
+.wrapper {
+  height: 100%;
+  width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  }
-  
-  .listItem a.active {
-     font-weight: 700;
-    border-bottom: 2px solid black; /* Added to create the underline (dash) for active link */
-    padding: 2%;
-  }
-  
-  /* right */
-  .right {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: black;
-    position: relative; /* Added */
-  }
-  
-  .img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative; /* Added */
-  }
-  
-  .modal {
-    height: auto;
-    width: auto;
-    min-width: 120px;
-    background-color: #f3d9c5;
-    border-radius: 2px;
-    border: 1px solid #000100;
-    position: absolute;
-    top: 135%;
-    left: 15%;
-    display: flex;
-    flex-direction: column; /* Change flex-direction to column */
-    align-items: left;
-    justify-content: left;
-    gap: 1rem;
-    z-index: 1;
-    white-space: nowrap; /* Prevent text from wrapping */
-    padding: 10px;
-  }
-  
-  .right > .modal > span {
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-  }
-  
-  .right > .modal > span:hover {
-    font-weight: 600;
-    color: rgb(171, 0, 0);
-  }
-  
-  .right > .modal > a {
-    font-weight: 400;
-    text-decoration: none;
-    color: #000000;
-    transition: 0.1s ease-in-out;
-  }
-  
-  .right > .modal > a:hover {
-    font-weight: 700;
-  }
-  
+/* left */
+.left {
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.left > a {
+  text-decoration: none;
+  color: black;
+  transition: 0.2s all;
+}
+
+.left > a:hover {
+  text-decoration: none;
+  color: #923a00;
+}
+
+/* center */
+.center {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+  color: black;
+  text-decoration: none;
+}
+
+.listItem a {
+  color: #000000;
+  cursor: pointer;
+  transition: 150ms all;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 400;
+  transition: 0.1s ease-in-out;
+  position: relative; /* Added */
+}
+
+.listItem a:hover {
+  color: #000000;
+  font-weight: 700;
+}
+
+.listItem a.active {
+  font-weight: 700;
+  border-bottom: 2px solid black; /* Added to create the underline (dash) for active link */
+  padding: 2%;
+}
+
+/* right */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: black;
+  position: relative; /* Added */
+}
+
+.img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative; /* Added */
+}
+
+.modal {
+  height: auto;
+  width: auto;
+  min-width: 120px;
+  background-color: #f3d9c5;
+  border-radius: 2px;
+  border: 1px solid #000100;
+  position: absolute;
+  top: 135%;
+  left: 50%; /* Center the modal horizontally */
+  transform: translateX(-50%); /* Adjust position */
+  display: flex;
+  flex-direction: column; /* Change flex-direction to column */
+  align-items: left;
+  justify-content: left;
+  gap: 1rem;
+  z-index: 1;
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 10px;
+}
+
+.right > .modal > span {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.right > .modal > span:hover {
+  font-weight: 600;
+  color: rgb(171, 0, 0);
+}
+
+.right > .modal > a {
+  font-weight: 400;
+  text-decoration: none;
+  color: #000000;
+  transition: 0.1s ease-in-out;
+}
+
+.right > .modal > a:hover {
+  font-weight: 700;
+}
+
+.loginHandler {
+  display: flex;
+  align-items: center;
+}
+
+.loginHandler p {
+  margin: 0; /* Remove default margin */
+}
+
+.loginHandler span {
+  font-weight: 500;
+  color: #ffcfaf;
+}
+
+.loginHandler a {
+  color: #ffcfaf;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+}
+
+.loginHandler p {
+  cursor: pointer;
+  background-color: #222;
+  padding: 5px 15px;
+  color: #f8e8dd;
+  font-weight: 300;
+  display: inline-block;
+  border-radius: 50px;
+}
+
+.loginHandler p:hover {
+  background-color: #333; /* Change background color on hover */
+}
+
+.loginHandler > p,
+.loginHandler > p > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.right > .img {
+  margin-right: 5px; /* Add a margin to separate the image and text */
+}
+
+.right > p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

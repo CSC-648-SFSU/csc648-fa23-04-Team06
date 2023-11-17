@@ -1,6 +1,5 @@
 import React from 'react';
 import './imageColumnDescription.css';
-import { MdFlightTakeoff } from "react-icons/md";
 
 const ImageColumnDescription = ({ heading, column, imageSrc, backgroundColor }) => {
   const imageStyle = {
