@@ -15,7 +15,7 @@ const app = express();
 // connect db
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URL, () =>
-  console.log("MongoDB has been started successfully")
+  console.log("Connected to DestiGo Database [MongoDB]")
 );
 
 // routes
@@ -74,5 +74,5 @@ app.post("/upload", upload.single("image"), async (req, res) => {
 
 // connect server
 app.listen(process.env.PORT, () =>
-  console.log("Server has been started successfully")
+  console.log("Connected to DestiGo Server")
 );
