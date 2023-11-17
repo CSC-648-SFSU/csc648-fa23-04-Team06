@@ -33,7 +33,6 @@
 
 .categories {
     display: flex;
-
     gap: 3rem;
     color: #333;
     margin-bottom: 2rem;
@@ -64,12 +63,13 @@
     width: 550px;
     height: 350px;
     position: relative;
-    margin-bottom: 40%;
+    margin-bottom: 35rem; 
 }
+
 
 .blog>a>img {
     border-radius: 10px;
-
+    object-fit: cover;
     height: 100%;
     width: 100%;
 }
@@ -119,6 +119,7 @@
 .authorAndCreatedAt {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #444;
 }
 
@@ -194,3 +195,25 @@ font-weight: 400;
     color: #000;
   }
   
+
+.userInfo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffcba9;
+    color: #742e00;
+    padding: 5px 5px;
+    padding-right: 15px;
+    border-radius: 50px;
+}
+.userInfo > p{
+    font-size: 18px;
+}
+
+.userInfo > img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
