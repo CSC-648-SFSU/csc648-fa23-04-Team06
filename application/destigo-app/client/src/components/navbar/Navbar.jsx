@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/authSlice";
 import ChatModal from "../chat/ChatModal";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
@@ -24,11 +23,10 @@ const Navbar = () => {
     }
   };
 
-
-
   const isNotLoggedIn = useSelector((state) => state.auth.user === null);
   const isLoggedIn = useSelector((state) => state.auth.user !== null);
   const username = useSelector((state) => state.auth.user?.username);
+  const profilePictureUrl = useSelector((state) => state.auth.user?.profilePicture);
 
   return (
     <div className={classes.container}>
@@ -89,17 +87,18 @@ const Navbar = () => {
         <div className={classes.right}>
           <div className={classes.loginHandler} onClick={handleImageClick}>
             {isNotLoggedIn && (
-              <p>
+              <h6>
                 <a href="/login">Log In / Sign Up</a>
-              </p>
+              </h6>
             )}
             {isLoggedIn && (
               <p>
-                <span>{username}</span>
+                {profilePictureUrl && <img src={profilePictureUrl} alt={username} />}
+                <p>{username}</p>
                 {showModal ? (
-                  <AiFillCaretUp color="#ffcfaf" />
+                  <AiFillCaretUp color="#f8e8dd" />
                 ) : (
-                  <AiFillCaretDown color="#ffcfaf" />
+                  <AiFillCaretDown color="#f8e8dd" />
                 )}
               </p>
             )}

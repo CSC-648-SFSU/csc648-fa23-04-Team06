@@ -72,16 +72,7 @@
   align-items: center;
   gap: 0.75rem;
   color: black;
-  position: relative; /* Added */
-}
-
-.img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative; /* Added */
+  position: relative;
 }
 
 .modal {
@@ -127,52 +118,59 @@
 }
 
 .loginHandler {
+  background-color: #222;
+  border-radius: 50px;
   display: flex;
   align-items: center;
+  transition: 0.2s all;
 }
 
-.loginHandler p {
-  margin: 0; /* Remove default margin */
+.loginHandler:hover {
+  background-color: #3b3b3b;
 }
 
-.loginHandler span {
-  font-weight: 500;
-  color: #ffcfaf;
+/* This is for Not Logged in State */
+.loginHandler h6 {
+  padding: 5px 15px;
+  font-weight: 300;
+  font-size: 17px;
+  color: #f8e8dd;
 }
 
 .loginHandler a {
-  color: #ffcfaf;
+  color: #f8e8dd;
   text-decoration: none;
   transition: 0.1s ease-in-out;
 }
 
+
+/*-----------------------*/
+
+/* This is for Logged in State */
 .loginHandler p {
+  font-weight: 400;
+  margin: 0;
+  font-size: 17px;
+  padding: 3px 0px;
+  padding-left: 5px;
+  padding-right: 12px;
   cursor: pointer;
-  background-color: #222;
-  padding: 5px 15px;
   color: #f8e8dd;
-  font-weight: 300;
-  display: inline-block;
-  border-radius: 50px;
 }
 
-.loginHandler p:hover {
-  background-color: #333; /* Change background color on hover */
+.loginHandler img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 100%;
 }
 
 .loginHandler > p,
 .loginHandler > p > a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.1rem;
 }
+/*-----------------------*/
 
-.right > .img {
-  margin-right: 5px; /* Add a margin to separate the image and text */
-}
 
-.right > p {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
