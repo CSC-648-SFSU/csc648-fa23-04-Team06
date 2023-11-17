@@ -6,7 +6,7 @@ const authController = require("./controllers/authController");
 const blogController = require("./controllers/blogController");
 const messageController = require("./controllers/messageController");
 const userController = require("./controllers/userController");
-const friendsController = require("./controllers/friendsController");
+const friendsController = require('./controllers/friendsController');
 const multer = require("multer");
 const app = express();
 

@@ -33,6 +33,14 @@ const Navbar = () => {
     setShowModal(false);
   }
 
+  const handleFriendsListClose = () => {
+    setShowFriendsList(false);
+  };
+  
+  {showFriendsList && (
+    <FriendsList onClose={handleFriendsListClose} />
+  )}
+
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
