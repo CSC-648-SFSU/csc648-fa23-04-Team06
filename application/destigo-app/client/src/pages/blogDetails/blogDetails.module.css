@@ -14,16 +14,14 @@
 .goBack{
     position: absolute;
     text-decoration: none;
-    color: #F8E8DD;
+    color: #742e00;
     top: 6.5rem;
     left: 5rem;
     display: flex;
     align-items: center;
     gap: 0.2rem;
-    background-color: #222;
-    padding-left: 5px;
-    padding-right: 10px;
-    padding-bottom: 2px;
+    background-color: #ffc299;
+    padding: 5px 15px;
     border-radius: 50px;
     margin-top: 0.2rem;
     
@@ -130,6 +128,7 @@
     margin-bottom: 0.5rem;
 }
 
+
 .likesAndViews{
     display: flex;
     flex-direction: column;
@@ -144,6 +143,7 @@
     justify-content: space-between;
     color: #333;
     font-size: 18px;
+    align-items: center;
 }
 
 .authorAndCreatedAt > span > span{
@@ -152,4 +152,24 @@
     font-weight: bold;
 }
 
+.userInfo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffcba9;
+    color: #742e00;
+    padding: 5px 5px;
+    padding-right: 15px;
+    border-radius: 50px;
+}
+.userInfo > p{
+    font-size: 18px;
+}
+
+.userInfo > img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50px;
+}
 

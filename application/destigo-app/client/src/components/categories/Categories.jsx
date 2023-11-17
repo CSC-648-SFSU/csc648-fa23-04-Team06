@@ -43,11 +43,19 @@ const Categories = () => {
         const filteredBlogs = blogs.filter(
           (blog) => blog.category.toLowerCase() === activeCategory.toLowerCase()
         );
-
-        return filteredBlogs;
+  
+        // Sort the filteredBlogs array by createdAt in descending order
+        const sortedBlogs = [...filteredBlogs].sort((a, b) => {
+          const dateA = new Date(a.createdAt).getTime();
+          const dateB = new Date(b.createdAt).getTime();
+          return dateB - dateA;
+        });
+  
+        return sortedBlogs;
       });
     }
-  }, [activeCategory]);
+  }, [activeCategory, blogs]);
+  
 
   // Function to truncate text to a specified number of words
   const truncateText = (text, maxWords) => {
@@ -67,7 +75,7 @@ const Categories = () => {
             <span className={classes.createPostText}>Create a post</span>
             <Link to="/create">
               <AiFillPlusCircle className={classes.plusCircle} />
-              </Link>
+            </Link>
           </div>
         </div>
 
@@ -94,6 +102,7 @@ const Categories = () => {
                     <img src={`${blog?.photo}`} alt={blog?.title} />
                   </Link>
                   <div className={classes.blogData}>
+
                     <div className={classes.categoryAndMetadata}>
                       <span className={classes.category}>{blog?.category}</span>
                       <div className={classes.metadata}>
@@ -108,9 +117,11 @@ const Categories = () => {
                       {truncateText(blog?.desc, 70)}
                     </p>
                     <div className={classes.authorAndCreatedAt}>
-                      <span>
-                        <span>Author:</span> {blog?.userId?.username}
-                      </span>
+                    <div className={classes.userInfo}>
+              <img src={blog?.userId?.profilePicture}/>             
+              <p>{blog?.userId?.username}</p>
+
+              </div>
                       <span>
                         <span>Created:</span> {format(blog?.createdAt)}
                       </span>
