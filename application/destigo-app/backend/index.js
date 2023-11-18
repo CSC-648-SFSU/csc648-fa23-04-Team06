@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 // cors 
 const allowedOrigins = [
   'http://localhost:3000', // CORS Rule for Development URL
-  'https://destigo-app-client-frontend.vercel.app'  // CORS Rule for Production URL
+  'https://destigo.vercel.app'  // CORS Rule for Production URL
 ];
 
 const corsOptions = {
