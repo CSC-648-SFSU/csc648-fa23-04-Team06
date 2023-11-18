@@ -1,5 +1,5 @@
-const BASE_URL = "https://destigo-backend.onrender.com";
-// const BASE_URL = "http://localhost:8800";
+//const BASE_URL = "https://destigo-backend.onrender.com"; 
+const BASE_URL = "http://localhost:8800"; 
 
 export const request = async (
   url,
@@ -42,13 +42,14 @@ export const request = async (
       return data;
 
     case "DELETE":
-      res = await fetch(BASE_URL + url, { headers, method });
+      res = await fetch(BASE_URL + url, {
+        headers,
+        method,
+        body: JSON.stringify({ ...body }),
+      });
       data = await res.json();
       return data;
     default:
       return;
   }
 };
-
-// Export the BASE_URL along with the request function
-export { BASE_URL };
