@@ -1,0 +1,122 @@
+.container {
+  color: #c36417;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  padding: 20px;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.title {
+    text-shadow: 2px 2px 4px rgba(108, 108, 108, 0.5);
+    color: #A74F21;
+  }
+
+.friends-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.friends-list-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.friends-list-close {
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+}
+
+.friends-list-items {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.friends-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.friends-list-item-text {
+  background-color: #f3d9c5;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 5px;
+}
+
+.friends-list-item-timestamp {
+  font-size: 12px;
+  color: #999;
+}
+
+.friends-item {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #fff;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+.add-friend-button {
+  position: absolute;
+  right: 0;
+  background-color: #99c0ea;
+  color: #fff;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.add-friend-button-plus {
+  margin-right: 20px;
+}
+
+.unfriend-button {
+  position: absolute;
+  right: 0;
+  background-color: #e49494;
+  color: #fff;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
