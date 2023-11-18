@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { request } from '../../utils/fetchApi'; // import request from fetchApi
 import './FriendsList.css';
-
-const BASE_URL = 'http://localhost:8800';
 
 const FriendsList = ({ onClose }) => {
   const { user, token } = useSelector((state) => state.auth);
@@ -12,58 +11,42 @@ const FriendsList = ({ onClose }) => {
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/api/users`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      },
+    request('/api/users', 'GET', {
+      'Authorization': `Bearer ${token}`
     })
-    .then(response => response.json())
     .then(data => setUsers(data))
     .catch(error => console.error(error));
   
-    fetch(`${BASE_URL}/api/friends`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      },
+    request('/api/friends', 'GET', {
+      'Authorization': `Bearer ${token}`
     })
-    .then(response => response.json())
     .then(data => setFriends(data))
     .catch(error => console.error(error));
   }, [token, refreshKey]);
 
   const handleAddFriend = (user) => {
-
-    const body = JSON.stringify({ userObjectId: user._id });
-    fetch(`${BASE_URL}/api/friends/add`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-      body: body
+    const body = { userObjectId: user._id };
+    request('/api/friends/add', 'POST', {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }, body)
+    .then(data => {
+      if (data.message) {
+        console.log(data.message);
+      } else {
+        console.log('Friend added successfully');
+        setRefreshKey(refreshKey + 1);
+      }
     })
-      .then(response => response.json())
-      .then(data => {
-        if (data.message) {
-          console.log(data.message);
-        } else {
-          console.log('Friend added successfully');
-          setRefreshKey(refreshKey + 1);
-        }
-      })
-      .catch(error => console.error(error));
+    .catch(error => console.error(error));
   };
 
   const handleUnfriend = (friend) => {
-    fetch(`${BASE_URL}/api/friends/remove`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify({ friendId: friend._id })
-    })
-    .then(response => response.json())
+    const body = { friendId: friend._id };
+    request('/api/friends/remove', 'DELETE', {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }, body)
     .then(data => {
       if (data.message) {
         console.log(data.message);
