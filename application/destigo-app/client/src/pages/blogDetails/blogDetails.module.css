@@ -152,6 +152,16 @@
     font-weight: bold;
 }
 
+.createdAt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    font-size: 18px;
+    color: #742e00;
+}
+
 .userInfo{
     display: flex;
     align-items: center;

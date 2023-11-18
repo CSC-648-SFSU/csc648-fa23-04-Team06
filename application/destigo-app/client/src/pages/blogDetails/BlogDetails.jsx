@@ -6,7 +6,7 @@ import { request } from "../../utils/fetchApi";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import { format } from "timeago.js";
-import { MdOutlinePreview } from "react-icons/md";
+import { AiFillClockCircle } from "react-icons/ai";
 
 import {
   AiFillEdit,
@@ -125,9 +125,9 @@ const BlogDetails = () => {
 
               </div>
               
-            <span>
-              <span>Created:</span> {format(blogDetails?.createdAt)}
-            </span>
+            <div className={classes.createdAt}>
+              <AiFillClockCircle/> {format(blogDetails?.createdAt)}
+            </div>
           </div>
         </div>
       </div>

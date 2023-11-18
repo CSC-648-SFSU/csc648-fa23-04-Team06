@@ -123,10 +123,14 @@
     color: #444;
 }
 
-.authorAndCreatedAt>span>span {
-    font-size: 17px;
-    color: #000;
-    font-weight: bold;
+.createdAt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    font-size: 18px;
+    color: #742e00;
 }
 
 .readMore{
@@ -209,6 +213,7 @@ font-weight: 400;
 .userInfo > p{
     font-size: 18px;
 }
+
 
 .userInfo > img {
     width: 30px;

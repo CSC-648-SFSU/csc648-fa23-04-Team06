@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import classes from "./categories.module.css";
 import { MdOutlinePreview } from "react-icons/md";
 import { AiFillLike } from "react-icons/ai";
-import { AiFillPlusCircle } from "react-icons/ai";
+import { AiFillPlusCircle,AiFillClockCircle } from "react-icons/ai";
 import { FiArrowRight } from "react-icons/fi";
 
 const Categories = () => {
@@ -122,8 +122,8 @@ const Categories = () => {
               <p>{blog?.userId?.username}</p>
 
               </div>
-                      <span>
-                        <span>Created:</span> {format(blog?.createdAt)}
+                      <span className={classes.createdAt}>
+                        <AiFillClockCircle/> {format(blog?.createdAt)}
                       </span>
                     </div>
                     <Link
