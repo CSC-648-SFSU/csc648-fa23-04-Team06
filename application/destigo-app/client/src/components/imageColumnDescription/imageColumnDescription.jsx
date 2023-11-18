@@ -1,6 +1,5 @@
 import React from "react";
 import { format } from "timeago.js";
-import {MdOutlinePreview} from "react-icons/md"
 import "./imageColumnDescription.css";
 import { AiOutlineUser, AiTwotoneCalendar } from "react-icons/ai";
 
