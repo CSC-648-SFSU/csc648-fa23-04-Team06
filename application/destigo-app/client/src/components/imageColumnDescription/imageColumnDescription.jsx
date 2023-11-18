@@ -1,7 +1,8 @@
 import React from "react";
 import { format } from "timeago.js";
 import "./imageColumnDescription.css";
-import { AiOutlineUser, AiTwotoneCalendar } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
+import {FiClock} from "react-icons/fi"
 
 const ImageColumnDescription = ({
   heading,
@@ -31,7 +32,7 @@ const ImageColumnDescription = ({
               )}
               {column.date && (
                 <span>
-                  <AiTwotoneCalendar />
+                  <FiClock />
                   {format(column.date)}
                 </span>
               )}
