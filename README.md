@@ -1,7 +1,6 @@
 # DestiGo: The All-in-one Travel App!
 
-**Application URL: https://destigo-app-client-frontend.vercel.app**<br>
-**About Page URL: https://csc648-fa23-04-team06.vercel.app** 
+**DestiGo App: https://destigo.vercel.app**<br>
 
 <br>
 
