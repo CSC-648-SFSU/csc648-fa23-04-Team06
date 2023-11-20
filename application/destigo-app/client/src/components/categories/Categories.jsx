@@ -80,6 +80,9 @@ const Categories = () => {
 
   return (
     <div className={classes.container}>
+      <br/>      <br/>
+      <br/>
+
       <div className={classes.wrapper}>
         <div className={classes.header}>
           <h3>Explore the DestiGo Community</h3>
