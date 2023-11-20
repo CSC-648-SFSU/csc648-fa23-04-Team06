@@ -4,7 +4,7 @@ import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 import classes from "./categories.module.css";
 import { MdOutlinePreview } from "react-icons/md";
-import { AiFillLike } from "react-icons/ai";
+import { AiFillLike, AiOutlineCheck } from "react-icons/ai";
 import {
   AiFillPlusCircle,
   AiFillClockCircle,
@@ -196,6 +196,7 @@ const Categories = () => {
           )}
         </div>
       </div>
+      <div className={classes.Spacer}></div>
     </div>
   );
 };
