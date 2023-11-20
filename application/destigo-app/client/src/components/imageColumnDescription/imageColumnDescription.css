@@ -98,3 +98,24 @@
   background-color: #000000;
   color: #F1D0B6;
 }
+
+.author-date{
+  margin-bottom: 5px;
+}
+
+.author-img{
+  display: flex;
+  align-items: center;
+  color: #6e3000;
+  gap: 0.4rem;
+  font-weight: 500;
+
+}
+.author-img img{
+  margin-top: 5px;
+  width: 27px;
+  height: 27px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+

@@ -25,10 +25,10 @@ const ImageColumnDescription = ({
             <h2>{column.title}</h2>
             <div className="author-date">
               {column.author && (
-                <span>
-                  <AiOutlineUser />
+                <div className="author-img"> 
+                  <img src={column.authorImg}/>
                   {column.author}
-                </span>
+                </div>
               )}
               {column.date && (
                 <span>

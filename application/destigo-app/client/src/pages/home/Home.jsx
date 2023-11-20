@@ -135,6 +135,7 @@ const Home = () => {
           src: blog?.photo,
           alt: blog?.title,
           title: blog?.title,
+          authorImg: blog?.userId.profilePicture,
           description: blog?.desc,
           author: blog?.userId.username,
           date: blog?.createdAt,
