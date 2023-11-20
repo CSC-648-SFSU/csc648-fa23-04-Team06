@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 
-// cors 
+// CORS Rules (DO NOT TOUCH)
 const allowedOrigins = [
   'http://localhost:3000', // CORS Rule for Development URL
   'https://destigo.vercel.app'  // CORS Rule for Production URL
