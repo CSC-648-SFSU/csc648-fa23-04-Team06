@@ -4,7 +4,7 @@ import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 import classes from "./categories.module.css";
 import { MdOutlinePreview } from "react-icons/md";
-import { AiFillLike, AiOutlineCheck } from "react-icons/ai";
+import { AiFillLike, AiFillStar } from "react-icons/ai";
 import {
   AiFillPlusCircle,
   AiFillClockCircle,
@@ -156,12 +156,21 @@ const Categories = () => {
                         <span className={classes.category}>
                           {blog?.category}
                         </span>
+
                         <div className={classes.metadata}>
                           <MdOutlinePreview /> {blog.views} views
                         </div>
                         <div className={classes.metadata}>
                           <AiFillLike /> {blog?.likes?.length} likes
                         </div>
+                        
+                          
+                        {blog.featured && (
+                            <span className={classes.featuredText}>
+                              <AiFillStar/> Featured
+                            </span>
+                          )}
+                     
                       </div>
                       <h4>{blog?.title}</h4>
                       <p className={classes.blogDesc}>

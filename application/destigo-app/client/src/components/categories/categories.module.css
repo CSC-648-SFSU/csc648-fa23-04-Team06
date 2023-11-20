@@ -280,3 +280,13 @@
 .Spacer {
   padding-bottom: 10rem;
 }
+
+.featuredText{
+    background-color: #ffc8c8;
+    padding: 3px 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 50px;
+    color: #740000;
+}
