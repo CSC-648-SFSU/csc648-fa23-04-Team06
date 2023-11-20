@@ -74,14 +74,16 @@ body{
 .wrapper > .blogs{
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 /* left */
 .left{
     flex: 2;
     height: 100%;
+    
 }
+
 
 .left > .mainBlog{
     height: 100%;
@@ -94,6 +96,8 @@ body{
     width: 100%;
     object-fit: cover;
     position: relative;
+    filter: brightness(0.7); 
+
 }
 
 .categoryAndMetadata{
@@ -105,7 +109,7 @@ body{
 
 .category{
     border: 1px solid #fff;
-    border-radius: 12px;
+    border-radius: 50px;
     padding: 0.25rem 1.25rem;
 }
 
@@ -120,6 +124,7 @@ body{
     bottom: 2.5rem;
     color: #fff;
     padding: 0 1rem;
+    margin-left: 1rem;
 }
 
 .left > .mainBlog > .mainBlogData > h4{
@@ -129,7 +134,7 @@ body{
 
 .blogDesc{
     font-size: 18px;
-    color: #e2dede;
+    color: #ffffff;
     margin-bottom: 1rem;
 }
 
@@ -159,18 +164,20 @@ body{
     position: relative;
 }
 
-.right > .secondaryBlog > img{
-    border-radius: 10px;
+.right > .secondaryBlog > img {
+    border-radius: 8px;
     height: 100%;
     width: 110%;
     object-fit: cover;
     position: relative;
+    filter: brightness(0.7); 
 }
+
 
 .secondaryBlogData{
     width: 100%;
     position: absolute;
-    bottom: 2.5rem;
+    bottom: 0.7rem;
     padding: 0 1rem;
     color: white;
 }
@@ -187,6 +194,6 @@ body{
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    margin: 1.25rem 0;
+    margin: 1rem 0;
 } 
 
