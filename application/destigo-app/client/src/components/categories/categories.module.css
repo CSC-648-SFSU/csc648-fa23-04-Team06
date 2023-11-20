@@ -160,11 +160,10 @@ font-weight: 400;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
     text-align: left;
     font-size: 30px;
     margin-top: 3.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
   
   .plusCircleContainer {
@@ -222,3 +221,63 @@ font-weight: 400;
     border-radius: 50px;
 }
 
+
+
+
+.BlogListSearch {
+    display: flex;
+    transition: 0.2s all;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 60%;
+    margin-bottom: 3rem;
+  }
+  
+  .SearchIconBlog {
+    font-size: 40px;
+    display: flex;
+    color: #923a00;
+  }
+  
+  .BlogSearchDropdown{
+    font-size: 24px;
+    border: none;
+    outline: none;
+    margin-left: 0.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #923a00;
+    background: #ffd9bf;
+    transition: 0.2s all;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    width: auto;
+  }
+  
+  .BlogSearchDropdown:hover {
+    background-color: #ffc198;
+  }
+  
+  .BlogSearchBar {
+    margin-left: 0%;
+    background-color: #ffd9bf;
+    font-size: 24px;
+    padding: 3px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-left: 3% !important;
+    border: none;
+    outline: none;
+    transition: 0.2s all;
+    display: flex;
+    width: 50%;
+    color: #923a00;
+  }
+  
+  .BlogSearchBar:hover {
+    background-color: #ffc198;
+  }
+  

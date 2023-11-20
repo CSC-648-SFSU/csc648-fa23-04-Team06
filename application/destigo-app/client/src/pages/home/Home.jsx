@@ -33,7 +33,7 @@ const Home = () => {
   useEffect(() => {
     const fetchAndSortBlogs = async () => {
       try {
-        const data = await request("/blog/getAll", "GET");
+        const data = await request("/blog/blogs", "GET");
 
         // Sort the blogs array by createdAt in descending order
         const sortedBlogs = data.sort(
