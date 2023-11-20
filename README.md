@@ -6,7 +6,7 @@
 
 | Student Name | Student Email | GitHub Username | Student's role |
 | :----------: | :-----------: | :-------------: | :------------: |
-|   Sahej Tuli    | hello@sahejtuli.com |      sahejt       |  Team Lead   |
+|   Sahej Tuli    | hello@sahejtuli.com |      sahejt       |  Team Lead / PM   |
 |   Ray Dela Cruz   | radelacr@gmail.com |      trmbeefflavor       |  Front-end Lead   |
 |  Jessica Christine Rosero  | jessica.rosero@gmail.com|      icebearnose       |  Back-end Lead  |
 |   Navjot Singh   | navjotsingh88888@gmail.com |      nsingh166       |  Git Master   |
