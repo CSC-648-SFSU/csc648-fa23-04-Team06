@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classes from './register.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { request } from '../../utils/fetchApi';
 import { register } from '../../redux/authSlice';
 import { useDispatch } from 'react-redux';
-import { fileUpload } from '../../utils/cloudinary'; 
+import { fileUpload } from '../../utils/cloudinary';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [profilePicture, setProfilePicture] = useState(null); // Add state for profile picture
+  const [profilePicture, setProfilePicture] = useState(null);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
   const [error, setError] = useState('');
-  const [emailAvailability, setEmailAvailability] = useState('');
+  const [emailAvailability] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -46,7 +46,10 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    if (username === '' || email === '' || password === '') return;
+    if (!username || !email || !password) {
+      setError('Please fill in all required fields.');
+      return;
+    }
 
     if (password.length < 8) {
       setError('Password must be at least 8 characters.');
@@ -54,10 +57,9 @@ const Register = () => {
     }
 
     try {
-      let profilePictureUrl = ''; // Default value if no profile picture is provided
+      let profilePictureUrl = '';
 
       if (profilePicture) {
-        // If a profile picture is provided, upload it to Cloudinary
         profilePictureUrl = await fileUpload(profilePicture);
       }
 
@@ -67,36 +69,16 @@ const Register = () => {
         username,
         email,
         password,
-        profilePicture: profilePictureUrl, // Include the profile picture URL in the registration request
+        profilePicture: profilePictureUrl,
       });
+
       dispatch(register(data));
-      navigate('/login'); // Navigate to the "/login" page after successful registration
+      navigate('/login');
     } catch (error) {
       console.error(error);
     }
   };
 
-  //checking to see if the email was used
-  const checkEmailAvailability = async () => {
-    try {
-      const options = { 'Content-Type': 'application/json' };
-      const response = await request('/auth/check-email', 'POST', options, {
-        email,
-      });
-
-      setEmailAvailability(response.message);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    if (email === '') {
-      setEmailAvailability('');
-      return;
-    }
-    checkEmailAvailability();
-  }, [email]);
 
   return (
     <div className={classes.container}>
@@ -104,9 +86,23 @@ const Register = () => {
         <h2>🥳 Welcome to DestiGo!</h2>
         <h3>Create an account</h3>
         <form onSubmit={handleRegister}>
-          <input type="text" placeholder="Username..." onChange={(e) => setUsername(e.target.value)} className={classes.input} />
-          <input type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} className={classes.input} />
-          {emailAvailability && <p className={classes.message}>{emailAvailability}</p>}
+          <input
+            type="text"
+            placeholder="Username..."
+            onChange={(e) => setUsername(e.target.value)}
+            className={classes.input}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email..."
+            onChange={(e) => setEmail(e.target.value)}
+            className={classes.input}
+            required
+          />
+          {emailAvailability && (
+            <p className={classes.message}>{emailAvailability}</p>
+          )}
 
           <input
             type="password"
@@ -117,6 +113,7 @@ const Register = () => {
             className={`${classes.input} ${
               isPasswordFocused ? classes.passwordInputFocused : ''
             }`}
+            required
           />
           <div className={classes.passwordContainer}>
             {isPasswordFocused && (
@@ -133,9 +130,14 @@ const Register = () => {
             )}
           </div>
 
-          <input type="file" onChange={handleProfilePictureChange} />
-          
-          <button type="submit">{"Register ->"} <Link to="/login"></Link></button>
+          <input
+            type="file"
+            onChange={handleProfilePictureChange}
+            required
+          />
+
+          <button type="submit">Register</button>
+          {error && <p className={classes.error}>{error}</p>}
           <h6>
             Already have an account? <Link to="/login">Login</Link>
           </h6>
