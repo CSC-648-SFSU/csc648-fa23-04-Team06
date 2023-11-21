@@ -11,7 +11,7 @@
   overflow-y: scroll;
   padding: 20px;
   z-index: 9999;
-  background-color: #ffecdd;
+  background-color: #ffe6d2;
 }
 
 .title {
@@ -43,7 +43,7 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  background-color: #ffe3ce;
+  background-color: #ffdec5;
   border-bottom: 1px solid #ffac6c;
   margin-bottom: 0.1rem;
 }
