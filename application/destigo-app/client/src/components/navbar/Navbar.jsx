@@ -2,11 +2,13 @@ import React from "react";
 import classes from "./navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import womanImg from "../../assets/usericon.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/authSlice";
+import { BASE_URL } from '../../utils/fetchApi';
 import ChatModal from "../chat/ChatModal";
 import FriendsList from '../friends/FriendsList';
+import io from 'socket.io-client';
 
 
 
@@ -15,10 +17,26 @@ const Navbar = () => {
   const [showChatModal, setShowChatModal] = useState(false);
   const [showFriendsList, setShowFriendsList] = useState(false);
   const [friends, setFriends] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [socket, setSocket] = useState(null);
+  const user = useSelector((state) => state.auth.user);
 
   const isAuthenticated = useSelector((state) => state.auth.user !== null);
   const dispatch = useDispatch();
   const location = useLocation();
+
+  useEffect(() => {
+    const newSocket = io(BASE_URL); // Connect to the socket.io server
+    setSocket(newSocket);
+
+    if (user) {
+      newSocket.emit('login', user._id); // Emit the 'login' event with the user's ID
+    }
+
+    return () => {
+      newSocket.close(); // Close the connection when the component unmounts
+    };
+  }, [user]);
 
   const handleImageClick = () => {
     if (isAuthenticated) {
@@ -90,12 +108,14 @@ const Navbar = () => {
               </span>
             </div>
           )}
-          {showChatModal && (
-            <ChatModal onClose={() => setShowChatModal(false)} />
-          )}
-          {showFriendsList && (
-            <FriendsList friends={friends} setFriends={setFriends} onClose={() => setShowFriendsList(false)} />
-          )}
+          <div åclassName={classes["parent-container"]}>
+            {showChatModal && (
+              <ChatModal socket={socket} messages={messages} setMessages={setMessages} onClose={() => setShowChatModal(false)} />
+            )}
+            {showFriendsList && (
+              <FriendsList friends={friends} setFriends={setFriends} onClose={() => setShowFriendsList(false)} />
+            )}
+          </div>
         </div>
       </div>
     </div>

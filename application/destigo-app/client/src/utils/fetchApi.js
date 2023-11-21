@@ -1,5 +1,5 @@
-//const BASE_URL = "https://destigo-backend.onrender.com"; 
-const BASE_URL = "http://localhost:8800"; 
+export const BASE_URL = "https://destigo-backend.onrender.com"; 
+//export const BASE_URL = "http://localhost:8800"; 
 
 export const request = async (
   url,
