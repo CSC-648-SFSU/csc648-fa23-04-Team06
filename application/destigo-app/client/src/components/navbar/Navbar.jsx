@@ -1,18 +1,41 @@
 import React, { useState } from "react";
 import classes from "./navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
+import womanImg from "../../assets/usericon.png";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/authSlice";
+import { BASE_URL } from '../../utils/fetchApi';
 import ChatModal from "../chat/ChatModal";
+import FriendsList from '../friends/FriendsList';
+import io from 'socket.io-client';
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [showChatModal, setShowChatModal] = useState(false);
+  const [showFriendsList, setShowFriendsList] = useState(false);
+  const [friends, setFriends] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [socket, setSocket] = useState(null);
+  const user = useSelector((state) => state.auth.user);
 
   const isAuthenticated = useSelector((state) => state.auth.user !== null);
   const dispatch = useDispatch();
   const location = useLocation();
+
+  useEffect(() => {
+    const newSocket = io(BASE_URL); // Connect to the socket.io server
+    setSocket(newSocket);
+
+    if (user) {
+      newSocket.emit('login', user._id); // Emit the 'login' event with the user's ID
+    }
+
+    return () => {
+      newSocket.close(); // Close the connection when the component unmounts
+    };
+  }, [user]);
 
   const handleImageClick = () => {
     if (isAuthenticated) {
@@ -27,6 +50,14 @@ const Navbar = () => {
   const isLoggedIn = useSelector((state) => state.auth.user !== null);
   const username = useSelector((state) => state.auth.user?.username);
   const profilePictureUrl = useSelector((state) => state.auth.user?.profilePicture);
+
+  const handleFriendsListClose = () => {
+    setShowFriendsList(false);
+  };
+  
+  {showFriendsList && (
+    <FriendsList onClose={handleFriendsListClose} />
+  )}
 
   return (
     <div className={classes.container}>
@@ -106,15 +137,11 @@ const Navbar = () => {
 
           {isAuthenticated && showModal && (
             <div className={classes.modal}>
-              <Link to="/friends">Friends</Link>
-              <Link
-                onClick={() => {
-                  setShowChatModal(true);
-                  setShowModal(false);
-                }}
-              >
-                Messages
-              </Link>
+              <span onClick={() => setShowFriendsList(true)}>Friends</span>
+              <Link onClick={() => {
+                setShowChatModal(true);
+                setShowModal(false);
+              }}>Messages</Link>
               <Link to="/create">Create Post</Link>
               <span
                 onClick={() => {
@@ -125,9 +152,14 @@ const Navbar = () => {
               </span>
             </div>
           )}
-          {showChatModal && (
-            <ChatModal onClose={() => setShowChatModal(false)} />
-          )}
+          <div åclassName={classes["parent-container"]}>
+            {showChatModal && (
+              <ChatModal socket={socket} messages={messages} setMessages={setMessages} onClose={() => setShowChatModal(false)} />
+            )}
+            {showFriendsList && (
+              <FriendsList friends={friends} setFriends={setFriends} onClose={() => setShowFriendsList(false)} />
+            )}
+          </div>
         </div>
       </div>
     </div>
