@@ -83,60 +83,59 @@ const EventList = () => {
         />
       </div>
       <div className="event-list-container">
-      {filteredEvents.length === 0 ? (
+        {filteredEvents.length === 0 ? (
           <p className="no-results">😭 No events found for your search!</p>
         ) : (
-        <ul className="event-list">
-          {eventsToShow.map((event) => (
-            <li key={event._id} className="event-item">
-              <img
-                src={event.image}
-                alt={event.title}
-                className="event-image"
-              />
-              <strong className="event-title">{event.title}</strong>
-              <p className="event-description">{event.description}</p>
-              <p className="event-date">
-                <AiTwotoneCalendar />
-                {formattedDate(event.date)}
-              </p>
-              <p className="event-location">
-                <AiOutlineGlobal />
-                {event.location}
-              </p>
-            </li>
-          ))}
-        </ul>
+          <ul className="event-list">
+            {eventsToShow.map((event) => (
+              <li key={event._id} className="event-item">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="event-image"
+                />
+                <strong className="event-title">{event.title}</strong>
+                <p className="event-description">{event.description}</p>
+                <p className="event-date">
+                  <AiTwotoneCalendar />
+                  {formattedDate(event.date)}
+                </p>
+                <p className="event-location">
+                  <AiOutlineGlobal />
+                  {event.location}
+                </p>
+              </li>
+            ))}
+          </ul>
         )}
         {filteredEvents.length === 0 ? (
           <p className="no-results"></p>
         ) : (
-        <div className="pagination">
-          <button
-            className="page-button"
-            onClick={() =>
-              setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
-            }
-            disabled={currentPage === 1}
-          >
-            {"<- Previous"}{" "}
-          </button>
-          <p>Page {currentPage}</p>
-          <button
-            className="page-button"
-            onClick={() =>
-              setCurrentPage((prevPage) =>
-                Math.min(prevPage + 1, Math.ceil(filteredEvents.length / 9))
-              )
-            }
-            disabled={currentPage === Math.ceil(filteredEvents.length / 9)}
-          >
-            {"Next ->"}
-          </button>
-        </div>
+          <div className="pagination">
+            <button
+              className="page-button"
+              onClick={() =>
+                setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
+              }
+              disabled={currentPage === 1}
+            >
+              {"<- Previous"}{" "}
+            </button>
+            <p>Page {currentPage}</p>
+            <button
+              className="page-button"
+              onClick={() =>
+                setCurrentPage((prevPage) =>
+                  Math.min(prevPage + 1, Math.ceil(filteredEvents.length / 9))
+                )
+              }
+              disabled={currentPage === Math.ceil(filteredEvents.length / 9)}
+            >
+              {"Next ->"}
+            </button>
+          </div>
         )}
       </div>
-        
 
       <Newsletter />
     </>

@@ -91,11 +91,17 @@
   border-radius: 10px;
 }
 
+.event-item img{
+  object-fit: cover;
+}
+
 .event-image {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 55%;
   border-radius: 5px;
   margin-bottom: 10px;
+  object-fit: cover;
+  
 }
 
 .event-title {
@@ -116,19 +122,26 @@
 .event-date {
   display: flex;
   align-items: center;
+  color: #923a00;
+
 }
 
 .event-date svg {
   margin-right: 5px;
+  color: #923a00;
+
 }
 
 .event-location {
   display: flex;
   align-items: center;
+  color: #923a00;
 }
 
 .event-location svg {
   margin-right: 5px; /* Adjust the margin as needed */
+  color: #923a00;
+
 }
 
 .pagination{
