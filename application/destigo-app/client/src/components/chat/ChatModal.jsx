@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import classes from "./ChatModal.module.css";
 import { useSelector } from "react-redux";
 import { request } from '../../utils/fetchApi';
 import Chat from './Chat';
+import {
+  AiFillCloseCircle,
+  AiFillMinusCircle,
+  AiFillPlusCircle,
+  AiFillCheckCircle,
+} from "react-icons/ai";
+
+import {FiMessageSquare} from "react-icons/fi";
 
 const ChatModal = ({ onClose, socket }) => {
   const { user, token } = useSelector((state) => state.auth);
@@ -141,10 +149,10 @@ const ChatModal = ({ onClose, socket }) => {
 
   return (
     <div className={classes["chat-container"]}>
-      <Modal.Header closeButton>
-        <button onClick={handleClose} className="close-button">x</button>
-      </Modal.Header>
-      <h2 className={classes["title"]}>Chat</h2>
+      <AiFillCloseCircle onClick={handleClose} className={classes["close-button"]}/>
+     
+      <h2 className={classes["title"]}><FiMessageSquare/>Chat with Friends</h2>
+
       {friends.map(friend => (
         <div key={friend._id} className={classes["friends-item"]} onClick={() => handleFriendSelect(friend)}>
           <span className={classes["friends-list-item-text"]}>{friend.username}</span>
