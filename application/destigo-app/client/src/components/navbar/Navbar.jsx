@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import classes from "./navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import womanImg from "../../assets/usericon.png";
-import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/authSlice";
-import { BASE_URL } from '../../utils/fetchApi';
+import { BASE_URL } from "../../utils/fetchApi";
 import ChatModal from "../chat/ChatModal";
-import FriendsList from '../friends/FriendsList';
-import io from 'socket.io-client';
+import FriendsList from "../friends/FriendsList";
+import io from "socket.io-client";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 
 const Navbar = () => {
@@ -29,7 +28,7 @@ const Navbar = () => {
     setSocket(newSocket);
 
     if (user) {
-      newSocket.emit('login', user._id); // Emit the 'login' event with the user's ID
+      newSocket.emit("login", user._id); // Emit the 'login' event with the user's ID
     }
 
     return () => {
@@ -49,15 +48,17 @@ const Navbar = () => {
   const isNotLoggedIn = useSelector((state) => state.auth.user === null);
   const isLoggedIn = useSelector((state) => state.auth.user !== null);
   const username = useSelector((state) => state.auth.user?.username);
-  const profilePictureUrl = useSelector((state) => state.auth.user?.profilePicture);
+  const profilePictureUrl = useSelector(
+    (state) => state.auth.user?.profilePicture
+  );
 
   const handleFriendsListClose = () => {
     setShowFriendsList(false);
   };
-  
-  {showFriendsList && (
-    <FriendsList onClose={handleFriendsListClose} />
-  )}
+
+  {
+    showFriendsList && <FriendsList onClose={handleFriendsListClose} />;
+  }
 
   return (
     <div className={classes.container}>
@@ -124,7 +125,9 @@ const Navbar = () => {
             )}
             {isLoggedIn && (
               <p>
-                {profilePictureUrl && <img src={profilePictureUrl} alt={username} />}
+                {profilePictureUrl && (
+                  <img src={profilePictureUrl} alt={username} />
+                )}
                 <p>{username}</p>
                 {showModal ? (
                   <AiFillCaretUp color="#f8e8dd" />
@@ -138,10 +141,14 @@ const Navbar = () => {
           {isAuthenticated && showModal && (
             <div className={classes.modal}>
               <span onClick={() => setShowFriendsList(true)}>Friends</span>
-              <Link onClick={() => {
-                setShowChatModal(true);
-                setShowModal(false);
-              }}>Messages</Link>
+              <Link
+                onClick={() => {
+                  setShowChatModal(true);
+                  setShowModal(false);
+                }}
+              >
+                Messages
+              </Link>
               <Link to="/create">Create Post</Link>
               <span
                 onClick={() => {
@@ -154,10 +161,19 @@ const Navbar = () => {
           )}
           <div åclassName={classes["parent-container"]}>
             {showChatModal && (
-              <ChatModal socket={socket} messages={messages} setMessages={setMessages} onClose={() => setShowChatModal(false)} />
+              <ChatModal
+                socket={socket}
+                messages={messages}
+                setMessages={setMessages}
+                onClose={() => setShowChatModal(false)}
+              />
             )}
             {showFriendsList && (
-              <FriendsList friends={friends} setFriends={setFriends} onClose={() => setShowFriendsList(false)} />
+              <FriendsList
+                friends={friends}
+                setFriends={setFriends}
+                onClose={() => setShowFriendsList(false)}
+              />
             )}
           </div>
         </div>
