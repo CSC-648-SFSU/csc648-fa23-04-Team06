@@ -10,7 +10,7 @@ import {
 } from "react-icons/ai";
 
 const FriendsList = ({ onClose }) => {
-  const { user, token } = useSelector((state) => state.auth);
+  const { token } = useSelector((state) => state.auth);
   const [users, setUsers] = useState([]);
   const [friends, setFriends] = useState([]);
   const [search, setSearch] = useState("");

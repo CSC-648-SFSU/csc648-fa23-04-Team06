@@ -1,7 +1,6 @@
 import React, { useState , useEffect} from "react";
 import classes from "./navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
-import womanImg from "../../assets/usericon.png";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/authSlice";
 import { BASE_URL } from "../../utils/fetchApi";
@@ -56,9 +55,8 @@ const Navbar = () => {
     setShowFriendsList(false);
   };
 
-  {
+
     showFriendsList && <FriendsList onClose={handleFriendsListClose} />;
-  }
 
   return (
     <div className={classes.container}>
