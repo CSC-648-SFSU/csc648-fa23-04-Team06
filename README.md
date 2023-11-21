@@ -1,13 +1,12 @@
 # DestiGo: The All-in-one Travel App!
 
-**Application URL: https://destigo-app-client-frontend.vercel.app**<br>
-**About Page URL: https://csc648-fa23-04-team06.vercel.app** 
+**DestiGo App: https://destigo.vercel.app**<br>
 
 <br>
 
 | Student Name | Student Email | GitHub Username | Student's role |
 | :----------: | :-----------: | :-------------: | :------------: |
-|   Sahej Tuli    | hello@sahejtuli.com |      sahejt       |  Team Lead   |
+|   Sahej Tuli    | hello@sahejtuli.com |      sahejt       |  Team Lead / PM   |
 |   Ray Dela Cruz   | radelacr@gmail.com |      trmbeefflavor       |  Front-end Lead   |
 |  Jessica Christine Rosero  | jessica.rosero@gmail.com|      icebearnose       |  Back-end Lead  |
 |   Navjot Singh   | navjotsingh88888@gmail.com |      nsingh166       |  Git Master   |

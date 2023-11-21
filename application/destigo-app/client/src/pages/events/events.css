@@ -1,9 +1,11 @@
 
-  
-  .header-text {
-    margin-top: 3%;
+.header-text {
+  padding-top: 5%;
     width: 75%; /* Set the width for your element */
-    margin: 0 auto; /* Center the element horizontally */
-    margin-top: 5%;
+    margin-left: 7rem;
+    position: relative;
   }
   
+  .events-container{
+    background-color: #f8eee8;
+  }

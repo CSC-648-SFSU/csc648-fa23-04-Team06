@@ -2,7 +2,7 @@ const blogController = require("express").Router()
 const Blog = require("../models/Blog")
 const verifyToken = require('../middlewares/verifyToken')
 
-blogController.get('/getAll', async (req, res) => {
+blogController.get('/blogs', async (req, res) => {
     try {
         const blogs = await Blog.find({}).populate("userId", '-password')
         return res.status(200).json(blogs)

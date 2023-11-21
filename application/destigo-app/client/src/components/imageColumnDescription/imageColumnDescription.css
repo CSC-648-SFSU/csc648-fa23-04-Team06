@@ -1,18 +1,20 @@
+/* Increase padding for better spacing */
 .image-column-description {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   background-color: rgb(255, 251, 251);
 }
 
-.centered-heading{
+/* Adjust margin for better centering */
+.centered-heading {
   margin-top: 4%;
   color: #333;
-  margin-bottom: 4%;
+  margin-bottom: 5%;
   font-size: 35px;
   font-weight: 600;
 }
 
-
+/* Fine-tune spacing and alignment */
 .image-container {
   display: flex;
   flex-wrap: wrap;
@@ -22,22 +24,49 @@
 
 .image-item {
   text-align: left;
-  margin: 0 10px;
   box-sizing: border-box;
-  margin-bottom: 5%;
-  display: flex;
+  margin-bottom: 2%;
   flex-direction: column;
-  justify-content: space-between; /* Center items vertically */
-  height: 100%; /* Set a fixed height for consistent alignment */
+  justify-content: space-between;
+  width: 30%; /* Adjust the width as needed */
+}
+
+/* Add the following style to control the width of the items on smaller screens */
+@media (max-width: 768px) {
+  .image-item {
+    width: 100%;
+  }
+}
+
+.author-date{
+  display: flex;
+  gap: 2rem;
+}
+
+.image-item span{
+  display: flex;
+  width: auto;
+  color: #6e3000;
+  border-radius: 50px;
+  margin-top: 1.5%;
+  margin-bottom: 2%;
+  justify-content: left;
+  text-align: left;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.3rem;
+  font-weight: 500;
 }
 
 .image-item img {
+  object-fit: cover;
   width: 100%;
-  max-width: 400px;
-  height: auto;
+  height: 250px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
+
 
 .image-item h2 {
   color: #333;
@@ -48,7 +77,7 @@
 .image-item p {
   color: #666;
   text-align: left;
-  max-width: 400px;
+  max-width: 100%;
   margin-bottom: 10px;
 }
 
@@ -69,3 +98,24 @@
   background-color: #000000;
   color: #F1D0B6;
 }
+
+.author-date{
+  margin-bottom: 5px;
+}
+
+.author-img{
+  display: flex;
+  align-items: center;
+  color: #6e3000;
+  gap: 0.4rem;
+  font-weight: 500;
+
+}
+.author-img img{
+  margin-top: 5px;
+  width: 27px;
+  height: 27px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+

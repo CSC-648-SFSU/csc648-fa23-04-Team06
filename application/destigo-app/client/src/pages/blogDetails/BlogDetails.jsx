@@ -6,6 +6,8 @@ import { request } from "../../utils/fetchApi";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import { format } from "timeago.js";
+import { AiFillClockCircle } from "react-icons/ai";
+
 import {
   AiFillEdit,
   AiFillLike,
@@ -117,12 +119,15 @@ const BlogDetails = () => {
             </div>
           </div>
           <div className={classes.authorAndCreatedAt}>
-            <span>
-              <span>Author:</span> {blogDetails?.userId?.username}
-            </span>
-            <span>
-              <span>Posted:</span> {format(blogDetails?.createdAt)}
-            </span>
+          <div className={classes.userInfo}>
+              <img src={blogDetails?.userId?.profilePicture}/>             
+              <p>{blogDetails?.userId?.username}</p>
+
+              </div>
+              
+            <div className={classes.createdAt}>
+              <AiFillClockCircle/> {format(blogDetails?.createdAt)}
+            </div>
           </div>
         </div>
       </div>

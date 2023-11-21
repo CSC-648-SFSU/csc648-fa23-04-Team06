@@ -1,7 +1,7 @@
 .container{
     min-height: calc(100vh - 60px);
     margin-top: 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 10rem;
 }
 
 .wrapper{
@@ -14,17 +14,23 @@
 .goBack{
     position: absolute;
     text-decoration: none;
-    color: #222;
+    color: #742e00;
     top: 6.5rem;
     left: 5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.2rem;
+    background-color: #ffc299;
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-top: 0.2rem;
+    
 }
 
 .wrapper > img{
     height: 500px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .titleAndControls{
@@ -122,6 +128,7 @@
     margin-bottom: 0.5rem;
 }
 
+
 .likesAndViews{
     display: flex;
     flex-direction: column;
@@ -136,6 +143,7 @@
     justify-content: space-between;
     color: #333;
     font-size: 18px;
+    align-items: center;
 }
 
 .authorAndCreatedAt > span > span{
@@ -144,4 +152,34 @@
     font-weight: bold;
 }
 
+.createdAt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    font-size: 18px;
+    color: #742e00;
+}
+
+.userInfo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffcba9;
+    color: #742e00;
+    padding: 5px 5px;
+    padding-right: 15px;
+    border-radius: 50px;
+}
+.userInfo > p{
+    font-size: 18px;
+}
+
+.userInfo > img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50px;
+}
 

@@ -7,4 +7,5 @@
   font-family: 'Manrope', sans-serif;
   scroll-behavior: smooth;
   overscroll-behavior: none;
+  user-select: none;
 }

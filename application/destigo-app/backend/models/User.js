@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
     username: {
@@ -16,6 +16,9 @@ const UserSchema = new mongoose.Schema({
         required: true,
         min: 6,
     },
-}, {timestamps: true})
+    profilePicture: {
+        type: String, // Using String because storing Image URL from Cloudinary API
+    },
+}, { timestamps: true });
 
-module.exports = mongoose.model("User", UserSchema)
+module.exports = mongoose.model("User", UserSchema);

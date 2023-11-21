@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Navbar from "../../components/navbar/Navbar";
 import IntroVideo from "../../videos/intro.mp4";
 import ImageColumnDescription from "../../components/imageColumnDescription/imageColumnDescription";
@@ -14,12 +15,47 @@ import ImgDelta from "../../assets/delta.png";
 import ImgEtihad from "../../assets/etihad.png";
 import ImgEmirates from "../../assets/emirates.png";
 import Newsletter from "../../components/newsletter/Newsletter";
-
+import { BASE_URL } from "../../utils/fetchApi";
+import { request } from "../../utils/fetchApi";
 
 const Home = () => {
+  const [events, setEvents] = useState([]);
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    // Fetch events from the backend when the component mounts
+    axios
+      .get(BASE_URL + "/api/events")
+      .then((response) => setEvents(response.data))
+      .catch((error) => console.error("Error fetching events:", error));
+  }, []);
+
+  useEffect(() => {
+    const fetchAndSortBlogs = async () => {
+      try {
+        const data = await request("/blog/blogs", "GET");
+
+        // Sort the blogs array by createdAt in descending order
+        const sortedBlogs = data.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+
+        setBlogs(sortedBlogs);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchAndSortBlogs();
+  }, []);
+  
+  const top3Blogs = blogs.slice(0, 3);
+  const top3Events = events.slice(0, 3);
+
   const PopularDestinationData = [
     // This ImageColumnDescription Component is suitable for upto 12 columns,
     // please don't add more than 12 objects in the array.
+
     {
       src: ImgLondon,
       alt: "London, United Kingdom",
@@ -46,11 +82,10 @@ const Home = () => {
         "Bali, the Island of the Gods, is a tropical haven where lush rice terraces, ancient temples like Uluwatu, and beachside charm in Seminyak converge, inviting visitors to explore a unique blend of spirituality and natural beauty.",
       button: "Fly to Bali ->",
       url: "/flights",
-    }
+    },
   ];
 
   const AirlinePartnersData = [
-  
     {
       src: ImgEtihad,
       alt: "Etihad Airways",
@@ -95,9 +130,36 @@ const Home = () => {
         }
       />
       <ImageColumnDescription
+        heading="Latest Community Posts"
+        column={top3Blogs.map((blog) => ({
+          src: blog?.photo,
+          alt: blog?.title,
+          title: blog?.title,
+          authorImg: blog?.userId.profilePicture,
+          description: blog?.desc,
+          author: blog?.userId.username,
+          date: blog?.createdAt,
+          button: "Read More ->",
+          url: `/blogDetails/${blog._id}`,
+        }))}
+      />
+
+      <ImageColumnDescription
+        heading="Upcoming Top Events"
+        backgroundColor="#fcf2f2"
+        column={top3Events.map((event) => ({
+          src: event.image,
+          alt: event.title,
+          title: event.title,
+          description: event.description,
+          button: "Learn More ->",
+          url: "/events",
+        }))}
+      />
+
+      <ImageColumnDescription
         heading="Popular Destinations"
         column={PopularDestinationData}
-        
       />
 
       <ImageColumnDescription

@@ -53,3 +53,6 @@ export const request = async (
       return;
   }
 };
+
+// Export the BASE_URL along with the request function
+export { BASE_URL };
