@@ -61,6 +61,13 @@ const EventList = () => {
     return new Date(date).toLocaleDateString("en-US", options);
   };
 
+   // Function to limit the description to 50 words
+   const limitDescription = (description) => {
+    const words = description.split(' ');
+    const limitedWords = words.slice(0, 30);
+    return limitedWords.join(' ') + (words.length > 30 ? '...' : '');
+  };
+
   return (
     <>
       <div className="event-list-search">
@@ -95,7 +102,7 @@ const EventList = () => {
                   className="event-image"
                 />
                 <strong className="event-title">{event.title}</strong>
-                <p className="event-description">{event.description}</p>
+                <p className="event-description">{limitDescription(event.description)}</p>
                 <p className="event-date">
                   <AiTwotoneCalendar />
                   {formattedDate(event.date)}
